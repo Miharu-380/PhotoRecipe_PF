@@ -1,24 +1,46 @@
-# README
+# スマフォトレシピ！（Photo Recipe）
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+「おしゃれな写真を撮りたいけど、撮り方が分からない！」<br>
+「みんなどんな風に写真を加工してるの？」<br>
+「面白い写真アプリを見つけたから共有したい！」<br><br>
+そんな思いを持った人が集まり、"写真 × その写真への想い × 撮り方"を共有するSNSです。<br>
+- 撮影に対するこだわりや撮影技術(レシピ)をシェアすることで、写真仲間に出会えたり、交流することができます。
+- お気に入りのレシピを保存したり、シチュエーションにあったレシピを検索することができます。
 
-Things you may want to cover:
+レシピ通りに撮影→Instagramに投稿→今まで以上のいいね！をもらえるのも夢ではないかも！？
 
-* Ruby version
+### サイトテーマ
+スマートフォンで撮影した写真と撮影技術投稿サイト。
 
-* System dependencies
+### テーマを選んだ理由
+Instagram等で、多くの投稿写真をみる度に「どうやって撮影したのだろう？」と思うことがあります。<br>
+実際に自分も素敵だなと思った写真を真似して撮ってみても”何か違う”と感じることが多々ありました。<br>
+そこでまず、一眼レフ等のカメラで撮影した写真と、スマートフォンで撮影した写真を差別化し、”スマートフォンで撮影した写真に特化”して撮影技術を共有できたら、気軽に誰でもお気に入りの写真が撮れると思いこのサイトを制作しました。
 
-* Configuration
+### ターゲットユーザ
+- カメラを買うほどでもないけど、スマートフォンで写真を撮るのが好きという方
+- 自分も「映える」写真が撮りたい方
+- 写真撮影技術を向上したい方
+- 新しい撮り方を見つけたので自慢したい方
 
-* Database creation
+### 主な利用シーン
+- 気軽にお気に入りの写真が撮りたい時
+- 素敵！と言われる写真を撮りたい時
+- 自信作の撮影方法を自慢したい時
 
-* Database initialization
 
-* How to run the test suite
+## 設計書
+ER図（仮）：https://drive.google.com/file/d/148dnHdJw6ik_fs-g1hYAjbkJvpYFUfcY/view?usp=sharing<br><br>
+テーブル定義書（仮）：https://docs.google.com/spreadsheets/d/1xez6gQmf0mGyafTqBJXsFfr2MI9nS57v/edit#gid=1243549839<br><br>
+アプリケーション設計書（仮）：https://docs.google.com/spreadsheets/d/1JDVeOWU6CKI0bNWl4rc7EXBqfo98KN68SCTVIuXPyJA/edit?usp=sharing
 
-* Services (job queues, cache servers, search engines, etc.)
+## チャレンジ要素一覧
+https://docs.google.com/spreadsheets/d/1SDFZfSW8QqbgynwyHAH7GCB6KCw9dbNRrw5_2srT4Aw/edit?usp=sharing
 
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
