@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   # # ========== 管理者(admin) ==========
-  # devise_for :admins
+  devise_for :admins
 
   # namespace :admin do
   #   root to: 'homes#top'
