@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   #   patch 'users/withdraw' => 'users#withdraw'
   # end
 
+  # get 'searches/search' => 'search#search'
   devise_for :users
 
   # # ========== 管理者(admin) ==========
