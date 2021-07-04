@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   #   patch 'users/withdraw' => 'users#withdraw'
   # end
 
-  # devise_for :users
+  devise_for :users
 
   # # ========== 管理者(admin) ==========
   # devise_for :admins
