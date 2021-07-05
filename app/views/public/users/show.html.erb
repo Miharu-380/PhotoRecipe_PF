@@ -1,4 +1,12 @@
+<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+<br>
 <%= @user.username %>
+<br>
+<%= @user.name %>
+<br>
+<%= @user.email %>
+<br>
+<%= @user.introduction %>
 <br>
 <% if current_user == !@user %>
 <%= render 'follow', user: @user %>
