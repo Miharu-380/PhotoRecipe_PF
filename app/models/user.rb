@@ -13,13 +13,10 @@ class User < ApplicationRecord
   has_many :followings, through: :relationships, source: :followed
   # フォローしているユーザーを中間テーブルをスルーしてUserテーブルから探す→followed_id（自分にフォローされるユーザーID）参照
 
-  VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i
-  # 半角英数字のみ
+   USERNAME_REGEXP = /\A[a-zA-Z0-9][\w-]+\z/
+  # 半角英数字記号_-のみ
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   # 有効なメールアドレス
-  USERNAME_REGEXP = /\A[a-zA-Z0-9][\w-]+\z/
-  # 半角英数字記号_-のみ
-  validates :password, format: { with: VALID_PASSWORD_REGEX }, presence: true
   validates :name, presence: true, length: {maximum: 50 }
   validates :username, format: { with: USERNAME_REGEXP }, presence: true, uniqueness: true
   validates :email, format: { with: VALID_EMAIL_REGEX }, presence: true, uniqueness: true
