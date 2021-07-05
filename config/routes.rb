@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  # # ========== ユーザー(user) ==========
-  # scope module: :public do
-  #   root to: 'homes#top'
-  #   get 'about' => 'homes#about'
+  devise_for :users
+  # ========== ユーザー(user) ==========
+  scope module: :public do
+    root to: 'homes#top'
+    get 'about' => 'homes#about'
   #   get 'items/search' => 'items#search'
 
   #   resources :posts do
@@ -23,14 +23,13 @@ Rails.application.routes.draw do
   #   post 'contacts/back' => 'contacts#back'
   #   get 'contacts/done' => 'contacts#done'
 
-  #   resources :users, only: [:edit, :update]
-  #   get 'users/my_page' => 'users#show'
-  #   get 'users/unsubscribe' => 'users#unsubscribe'
-  #   patch 'users/withdraw' => 'users#withdraw'
-  # end
+    resources :users, only: [:edit, :update, :show]
+    get 'users/unsubscribe' => 'users#unsubscribe'
+    patch 'users/withdraw' => 'users#withdraw'
+  end
 
   # get 'searches/search' => 'search#search'
-  devise_for :users
+
 
   # # ========== 管理者(admin) ==========
   devise_for :admins
