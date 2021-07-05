@@ -1,5 +1,9 @@
 <%= form_with model: @user, url: user_path, local: true do |f| %>
   <%= render 'layouts/error', obj: @user %>
+  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %><br>
+  <%= f.label "プロフィール画像" %><br>
+  <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+<br>
   <%= f.label "名前" %>
   <%= f.text_field :name, autofocus: true, placeholder: "令和道子" %>
 <br>

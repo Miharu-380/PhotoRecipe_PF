@@ -21,6 +21,7 @@ class User < ApplicationRecord
   validates :username, format: { with: USERNAME_REGEXP }, presence: true, uniqueness: true
   validates :email, format: { with: VALID_EMAIL_REGEX }, presence: true, uniqueness: true
 
+  attachment :profile_image
 
   def follow(user_id)
     relationships.create(followed_id: user_id)
