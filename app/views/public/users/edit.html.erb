@@ -1,6 +1,6 @@
 <%= form_with model: @user, url: user_path, local: true do |f| %>
   <%= render 'layouts/error', obj: @user %>
-  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %><br>
+  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %><br>
   <%= f.label "プロフィール画像" %><br>
   <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
 <br>
@@ -17,5 +17,6 @@
   <%= f.email_field :email, autofocus: true, placeholder: "sample@example.com" %>
 <br>
   <%= f.submit "編集内容を保存", class: "btn btn-success" %>
-  <%= link_to "退会する", user_path(@user), class: "btn btn-danger", method: :delete, "data-confirm" => "本当に退会しますか？"  %>
+  <%= link_to "退会する", unsubscribe_path(@user), class: "btn btn-danger" %>
 <% end %>
+

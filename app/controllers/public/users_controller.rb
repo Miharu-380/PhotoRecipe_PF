@@ -17,6 +17,10 @@ class Public::UsersController < ApplicationController
     end
   end
 
+  def unsubscribe
+    @user = User.find(params[:id])
+  end
+
   def destroy
     @user = User.find(params[:id])
     @user.update(is_deleted: true)
