@@ -17,5 +17,5 @@
   <%= f.email_field :email, autofocus: true, placeholder: "sample@example.com" %>
 <br>
   <%= f.submit "編集内容を保存", class: "btn btn-success" %>
-  <%= link_to "退会する", users_unsubscribe_path, class: "btn btn-danger" %>
+  <%= link_to "退会する", user_path(@user), class: "btn btn-danger", method: :delete, "data-confirm" => "本当に退会しますか？"  %>
 <% end %>
