@@ -18,9 +18,15 @@ class Public::UsersController < ApplicationController
   end
 
   def unsubscribe
+    @user = User.find(params[:id])
   end
 
-  def withdraw
+  def destroy
+    @user = User.find(params[:id])
+    @user.update(is_deleted: true)
+    reset_session
+    redirect_to root_path
+    flash[:notice] = "ご利用ありがとうございました。"
   end
 
  private
