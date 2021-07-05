@@ -1,4 +1,18 @@
 <%= @user.username %>
 <br>
+<% if current_user == !@user %>
+<%= render 'follow', user: @user %>
+<% end %>
+<br>
+フォロワー：
+<%= link_to user_followers_path(@user) do %>
+<%= @user.followers.count %>
+<% end %>
+|
+フォロー：
+<%= link_to user_followings_path(@user) do %>
+<%= @user.followings.count %>
+<% end %>
+<br>
 <%= link_to "マイページ編集", edit_user_path(current_user) %>
 <br>

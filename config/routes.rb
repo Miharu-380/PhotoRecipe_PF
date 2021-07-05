@@ -23,7 +23,11 @@ Rails.application.routes.draw do
   #   post 'contacts/back' => 'contacts#back'
   #   get 'contacts/done' => 'contacts#done'
 
-    resources :users, only: [:edit, :update, :show]
+    resources :users, only: [:edit, :update, :show] do
+      resource :relationships, only: [:create, :destroy]
+    	get 'followings' => 'relationships#followings', as: 'followings'
+  	  get 'followers' => 'relationships#followers', as: 'followers'
+    end
     get 'users/unsubscribe' => 'users#unsubscribe'
     patch 'users/withdraw' => 'users#withdraw'
   end
