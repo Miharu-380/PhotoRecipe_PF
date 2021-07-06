@@ -1,0 +1,7 @@
+<% posts.each do |post| %>
+  <%= link_to post_path(post) do %>
+    <div class="post-size">
+      <%= attachment_image_tag post, :image %>
+    </div>
+  <% end %>
+<% end %>
