@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  devise_for :users
   # ========== ユーザー(user) ==========
   scope module: :public do
     root to: 'homes#top'
@@ -32,15 +31,19 @@ Rails.application.routes.draw do
   end
 
   # get 'searches/search' => 'search#search'
-
+  devise_for :users
 
   # # ========== 管理者(admin) ==========
-  devise_for :admins
+  devise_for :admins, controllers: {
+    sessions: 'admins/sessions',
+    registrations: 'admins/registrations',
+    passwords: 'admins/passwords'
+  }
 
-  # namespace :admin do
-  #   root to: 'homes#top'
+  namespace :admin do
+    root to: 'homes#top'
   #   resources :users, only: [:index, :show, :edit, :update]
   #   resources :contacts, only: [:index, :show]
-  # end
+  end
 
 end
