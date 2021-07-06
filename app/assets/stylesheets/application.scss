@@ -16,11 +16,14 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+.top-box {
+  margin: auto 100px;
+}
+
 // ナビゲーションバー
 .nav {
-    width: 550px;
-    margin: 10px auto;
-    text-align: center;
+    margin: 15px auto;
     font-family: Georgia, Arial, sans-serif;
     font-size: 14px;
 }
@@ -28,15 +31,12 @@
 .nav-items {
     padding: 0;
     list-style: none;
+    margin-left: auto;
 }
 
 .nav-item {
     display: inline-block;
     margin-right: 25px;
-}
-
-.nav-item:last-child {
-    margin-right: 0;
 }
 
 .nav-link,
@@ -86,10 +86,10 @@
 // TOPページ
 .card-columns {
   @include media-breakpoint-only(lg) {
-    column-count: 4;
+    column-count: 8;
   }
   @include media-breakpoint-only(xl) {
-    column-count: 4;
+    column-count: 8;
   }
   @include media-breakpoint-only(s) {
     column-count: 2;
@@ -104,4 +104,12 @@
 // ユーザーアイコン
 .profile-shape img {
   border-radius: 50%;
+}
+
+
+// メディアクエリ（スマホ）
+@media screen and (max-width:425px) {
+  .top-box {
+    margin: auto;
+  }
 }
