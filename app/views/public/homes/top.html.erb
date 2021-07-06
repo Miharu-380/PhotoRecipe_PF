@@ -3,4 +3,15 @@
 <br><br>
 <%= link_to "マイページ", user_path(current_user) %>
 <br><br>
+<%= link_to "新規投稿", new_post_path %>
 <% end %>
+<br><br>
+<div class="wrap">
+<% @posts.each do |post| %>
+  <%= link_to post_path(post) do %>
+    <div class="post-size">
+      <%= attachment_image_tag post, :image %>
+    </div>
+  <% end %>
+<% end %>
+</div>
