@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PhotoRecipe</title>
+    <title>スマフォトレシピ！</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,8 @@
   </head>
 
   <body>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+    <%= render 'layouts/header' %>
     <%= render 'layouts/flash' %>
     <%= yield %>
   </body>

@@ -1,11 +1,5 @@
-<% if user_signed_in? %>
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-<br><br>
-<%= link_to "マイページ", user_path(current_user) %>
-<br><br>
-<%= link_to "新規投稿", new_post_path %>
-<% end %>
-<br><br>
-<div class="container-xl">
+<div class="top-box">
+<div class="container-fluid">
   <%= render 'index', posts: @posts %>
+</div>
 </div>

@@ -1,0 +1,15 @@
+<nav class="nav">
+  <ul class="nav-items">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <span><%= link_to "Make a Recipe!", new_post_path, class: "nav-link" %></span>
+        </li>
+        <li class="nav-item">
+          <span><%= link_to "Mypage", user_path(current_user), class: "nav-link" %></span>
+        </li>
+        <li class="nav-item">
+          <span><%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %></span>
+        </li>
+      <% end %>
+  </ul>
+</nav>
