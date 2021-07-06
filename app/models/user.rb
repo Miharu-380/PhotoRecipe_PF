@@ -12,6 +12,7 @@ class User < ApplicationRecord
   # フォローしてくれたユーザーを中間テーブルをスルーしてUserテーブルから探す→follower_id（自分をフォローするユーザーID）参照
   has_many :followings, through: :relationships, source: :followed
   # フォローしているユーザーを中間テーブルをスルーしてUserテーブルから探す→followed_id（自分にフォローされるユーザーID）参照
+  has_many :posts, dependent: :destroy
 
    USERNAME_REGEXP = /\A[a-zA-Z0-9][\w-]+\z/
   # 半角英数字記号_-のみ

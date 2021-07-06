@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_05_131831) do
+ActiveRecord::Schema.define(version: 2021_07_06_031114) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,11 +24,38 @@ ActiveRecord::Schema.define(version: 2021_07_05_131831) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "title"
+    t.string "image_id", null: false
+    t.string "photo_app", null: false
+    t.string "photo_filter"
+    t.string "fix_app"
+    t.string "fix_filter"
+    t.string "exposure"
+    t.string "highlight"
+    t.string "burilliance"
+    t.string "shadow"
+    t.string "contrast"
+    t.string "brightness"
+    t.string "saturation"
+    t.string "warmth"
+    t.string "sharpness"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["image_id"], name: "index_posts_on_image_id"
+    t.index ["photo_app"], name: "index_posts_on_photo_app"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
   create_table "relationships", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,7 +72,9 @@ ActiveRecord::Schema.define(version: 2021_07_05_131831) do
     t.datetime "updated_at", null: false
     t.boolean "is_deleted", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["name"], name: "index_users_on_name"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end
