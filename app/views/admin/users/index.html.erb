@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-md-10 mx-auto">
+      <h3>ユーザー一覧</h3>
+      <table class="table table-hover table-inverse table-responsive-md mt-3">
+        <thead class="table-active">
+          <tr>
+            <th>会員ID</th>
+            <th>氏名</th>
+            <th>ユーザーネーム</th>
+            <th>メールアドレス</th>
+            <th>ステータス</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td>
+                <%= user.id %>
+              </td>
+              <td>
+                <%= link_to admin_user_path(user) do %>
+                  <%= user.name %>
+                <% end %>
+              </td>
+              <td>
+                <%= user.username %>
+              </td>
+              <td>
+                <%= user.email %>
+              </td>
+              <td>
+                <% if user.is_deleted == true %>
+                  <p class="text-secondary">退会</p>
+                <% else %>
+                  <p class="text-success">有効</p>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
