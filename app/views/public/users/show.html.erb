@@ -2,9 +2,11 @@
 <br>
 <%= @user.username %>
 <br>
+<% if @user == current_user %>
 <%= @user.name %>
 <br>
 <%= @user.email %>
+<% end %>
 <br>
 <%= @user.introduction %>
 <br>
