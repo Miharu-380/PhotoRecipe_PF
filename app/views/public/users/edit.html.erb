@@ -1,6 +1,8 @@
 <%= form_with model: @user, url: user_path, local: true do |f| %>
   <%= render 'layouts/error', obj: @user %>
-  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %><br>
+  <div class="profile-shape">
+  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %>
+  </div><br>
   <%= f.label "プロフィール画像" %><br>
   <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
 <br>
