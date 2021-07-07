@@ -1,0 +1,3 @@
+$('#review-post-<%= @post.id.to_s %>').
+  html('<%= j render "public/posts/review_list", { post: @post } %>');
+$('#review-form-post-<%= @post.id.to_s %> #review_review').val("");

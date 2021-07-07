@@ -1,3 +1,4 @@
+<div class="container">
 <div class="profile-shape">
   <%= attachment_image_tag @post.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %>
   <%= link_to user_path(@post.user) do %>
@@ -32,3 +33,15 @@
   <p>加工フィルター：<%= @post.fix_filter %></p>
   <p>露出：<%= @post.exposure %>　ハイライト：<%= @post.highlight %>　ブリリアンス：<%= @post.burilliance %>　シャドウ：<%= @post.shadow %></p>
   <p>コントラスト：<%= @post.contrast %>　明るさ：<%= @post.brightness %>　彩度：<%= @post.saturation %>　暖かさ：<%= @post.warmth %>　シャープネス： <%= @post.sharpness %></p>
+
+  <div id="review-post-<%= @post.id.to_s %>">
+    <%= render 'review_list', { post: @post } %>
+  </div>
+  <div class="row" id="review-form-post-<%= @post.id.to_s %>">
+    <%= form_with model: [@post, Review.new], class: "w-100" do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :post_id, value: @post.id %>
+      <%= f.text_field :review, class: "form-control review-input border-0", placeholder: "コメント ...", autocomplete: :off %>
+    <% end %>
+  </div>
+  </div>

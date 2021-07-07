@@ -14,6 +14,7 @@ class User < ApplicationRecord
   # フォローしているユーザーを中間テーブルをスルーしてUserテーブルから探す→followed_id（自分にフォローされるユーザーID）参照
   has_many :posts, dependent: :destroy
   has_many :likes
+  has_many :reviews
 
    USERNAME_REGEXP = /\A[a-zA-Z0-9][\w-]+\z/
   # 半角英数字記号_-のみ
