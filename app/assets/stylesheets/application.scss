@@ -19,6 +19,7 @@
 
 body {
   margin: 0;
+  padding-bottom: 50px;
 }
 
 header {
@@ -139,6 +140,24 @@ header {
   // ブロック内のテキストの行の前に置く空白
   white-space: nowrap;
   // 詰めて表示
+}
+
+.no-text-decoration:hover {
+  text-decoration: none;
+}
+
+.black-color {
+  color: #262626;
+}
+
+.delete-review {
+  background-image: url("delete.png");
+  background-repeat: no-repeat;
+  width: 11px;
+  height: 11px;
+  float: right;
+  margin: 5px 0 0 10px;
+  background-size: 11px !important;
 }
 
 // ユーザーアイコン

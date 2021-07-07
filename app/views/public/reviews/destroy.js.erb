@@ -1,0 +1,2 @@
+$('#review-post-<%= @post.id.to_s %>').
+  html('<%= j render "public/posts/review_list", { post: @post } %>');
