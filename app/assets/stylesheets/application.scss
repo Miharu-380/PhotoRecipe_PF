@@ -115,6 +115,32 @@ header {
   width: 100%;
 }
 
+.love {
+  background-image: url("like-l.png");
+  background-repeat: no-repeat;
+  height: 36px;
+  width: 36px;
+  background-size: 36px !important;
+}
+
+.loved {
+  background-image: url("red-like.png");
+  background-repeat: no-repeat;
+  height: 36px;
+  width: 36px;
+  background-size: 36px !important;
+}
+
+.hide-text {
+  display: block;
+  overflow: hidden;
+  // 要素の内容が多すぎてブロックに収まらない場合に隠す
+  text-indent: 110%;
+  // ブロック内のテキストの行の前に置く空白
+  white-space: nowrap;
+  // 詰めて表示
+}
+
 // ユーザーアイコン
 .profile-shape img {
   border-radius: 50%;

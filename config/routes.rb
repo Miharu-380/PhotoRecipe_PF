@@ -6,12 +6,11 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     get 'about' => 'homes#about'
 
-    resources :posts, only: [:new, :create, :edit, :show, :destroy,:update]
-    # do
+    resources :posts, only: [:new, :create, :edit, :show, :destroy,:update] do
   #     resource :reviews, only: [:create, :destroy]
-  #     resource :likes, only: [:create, :destroy]
+      resources :likes, only: [:create, :destroy]
   #     resources :bookmarks, only: [:create, :destroy, :index]
-  #   end
+    end
 
   #   resources :tags, only: [:index, :show]
 
