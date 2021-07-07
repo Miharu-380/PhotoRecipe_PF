@@ -41,7 +41,8 @@
     <%= form_with model: [@post, Review.new], class: "w-100" do |f| %>
       <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.hidden_field :post_id, value: @post.id %>
-      <%= f.text_field :review, class: "form-control review-input border-0", placeholder: "コメント ...", autocomplete: :off %>
+      <%= f.text_field :review, class: "form-control border-0", placeholder: "コメント ...", autocomplete: :off %>
+      <%= f.submit "送信", class: "btn btn-outline-dark comment-submit float-right" %>
     <% end %>
   </div>
 </div>
