@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_07_08_083917) do
 
   create_table "admins", force: :cascade do |t|
