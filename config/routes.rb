@@ -10,9 +10,12 @@ Rails.application.routes.draw do
       resources :reviews, only: [:create, :destroy]
       resources :likes, only: [:create, :destroy]
   #     resources :bookmarks, only: [:create, :destroy, :index]
+      collection do
+        get 'search'
+      end
     end
 
-  get '/post/hashtag/:name', to: "posts#hashtag"
+    get '/post/hashtag/:name', to: "posts#hashtag"
 
   #   resources :contacs, only: [:new, :create]
   #   get 'contacts/complete' => 'contacts#complete'

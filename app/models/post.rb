@@ -7,11 +7,9 @@ class Post < ApplicationRecord
   has_many :hashtags, through: :post_hashtags
 
   def liked_by(user)
-    Like.find_by(user_id: user.id, post_id: id)
-# user_idとpost_idが一致するlikeを検索する
+    Like.find_by(user_id: user.id, post_id: id) # user_idとpost_idが一致するlikeを検索する
   end
 
-  #DBへのコミット直前に実施する
   after_create do
     post = Post.find_by(id: self.id)
     hashtags  = self.body.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
