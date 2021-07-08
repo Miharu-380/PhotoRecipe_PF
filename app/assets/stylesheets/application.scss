@@ -116,6 +116,7 @@ header {
   width: 100%;
 }
 
+// いいね機能
 .love {
   background-image: url("like-l.png");
   background-repeat: no-repeat;
@@ -142,6 +143,7 @@ header {
   // 詰めて表示
 }
 
+// コメント機能
 .no-text-decoration:hover {
   text-decoration: none;
 }
@@ -153,11 +155,11 @@ header {
 .delete-review {
   background-image: url("delete.png");
   background-repeat: no-repeat;
-  width: 11px;
-  height: 11px;
+  width: 15px;
+  height: 15px;
   float: right;
   margin: 5px 0 0 10px;
-  background-size: 11px !important;
+  background-size: 15px !important;
 }
 
 // ユーザーアイコン

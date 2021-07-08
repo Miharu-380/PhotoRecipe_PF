@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   #     resources :bookmarks, only: [:create, :destroy, :index]
     end
 
-  #   resources :tags, only: [:index, :show]
+    resources :tags 
+    # do
+  #     get 'posts', to: 'posts#search'
+  # end
 
   #   resources :contacs, only: [:new, :create]
   #   get 'contacts/complete' => 'contacts#complete'

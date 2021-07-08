@@ -26,6 +26,11 @@
     <%= link_to "編集", edit_post_path(@post) %>
     <%= link_to "削除", post_path(@post), method: :delete, "data-confirm" => "本当に削除しますか？" %>
   <% end %></p>
+
+  <% @post.tags.each do |tag| %>
+   <%= tag.tag_name %>
+  <% end %>
+
   <p><%= @post.body %></p>
   <p>機種・アプリ：<%= @post.photo_app %></p>
   <p>撮影フィルター：<%= @post.photo_filter %></p>
@@ -42,7 +47,7 @@
       <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.hidden_field :post_id, value: @post.id %>
       <%= f.text_field :review, class: "form-control border-0", placeholder: "コメント ...", autocomplete: :off %>
-      <%= f.submit "送信", class: "btn btn-outline-dark comment-submit float-right" %>
+      <%= f.submit "送信", class: "btn btn-outline-dark float-right" %>
     <% end %>
   </div>
 </div>
