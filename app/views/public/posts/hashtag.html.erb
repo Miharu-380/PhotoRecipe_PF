@@ -1,0 +1,14 @@
+<h2 class="nav-font">Search for ... #<%= @tag.hashname %></h2>
+  <div class="card-columns">
+      <div class="card">
+        <div class="bd-placeholder-img card-img">
+          <% @posts.each do |post| %>
+            <%= link_to post_path(post) do %>
+              <div class="post-size">
+                <%= attachment_image_tag post, :image %>
+              </div>
+          <% end %>
+        </div>
+      </div>
+          <% end %>
+  </div>

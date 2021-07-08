@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_08_003656) do
+
+ActiveRecord::Schema.define(version: 2021_07_08_083917) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,6 +25,12 @@ ActiveRecord::Schema.define(version: 2021_07_08_003656) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "hashtags", force: :cascade do |t|
+    t.string "hashname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "likes", force: :cascade do |t|
     t.integer "post_id", null: false
     t.integer "user_id", null: false
@@ -33,20 +40,20 @@ ActiveRecord::Schema.define(version: 2021_07_08_003656) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "post_tags", force: :cascade do |t|
+  create_table "post_hashtags", force: :cascade do |t|
     t.integer "post_id"
-    t.integer "tag_id"
+    t.integer "hashtag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["post_id", "tag_id"], name: "index_post_tags_on_post_id_and_tag_id", unique: true
-    t.index ["post_id"], name: "index_post_tags_on_post_id"
-    t.index ["tag_id"], name: "index_post_tags_on_tag_id"
+    t.index ["hashtag_id"], name: "index_post_hashtags_on_hashtag_id"
+    t.index ["post_id"], name: "index_post_hashtags_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
     t.text "title"
     t.string "image_id", null: false
+    t.text "hashbody"
     t.string "photo_app", null: false
     t.string "photo_filter"
     t.string "fix_app"
@@ -86,12 +93,6 @@ ActiveRecord::Schema.define(version: 2021_07_08_003656) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_reviews_on_post_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
-  end
-
-  create_table "tags", force: :cascade do |t|
-    t.string "tag_name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

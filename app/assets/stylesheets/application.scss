@@ -28,15 +28,12 @@ header {
   background-color: #fff;
 }
 
-
-
 // ナビゲーションバー
 .nav {
     margin: 15px auto;
     font-family: Georgia, Arial, sans-serif;
     font-size: 14px;
     background-color: white;
-
 }
 
 .nav-items {
@@ -92,6 +89,10 @@ header {
     opacity: 1;
     -webkit-transform: translate(0, 5px);
     transform: translate(0, 5px);
+}
+
+.nav-font {
+  font-family: Georgia, Arial, sans-serif;
 }
 
 // TOPページ

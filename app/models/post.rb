@@ -3,26 +3,34 @@ class Post < ApplicationRecord
   attachment :image
   has_many :likes, -> { order(created_at: :desc) }, dependent: :destroy
   has_many :reviews, dependent: :destroy
-  has_many :post_tags, dependent: :destroy
-  has_many :tags, through: :post_tags
+  has_many :post_hashtags
+  has_many :hashtags, through: :post_hashtags
 
   def liked_by(user)
     Like.find_by(user_id: user.id, post_id: id)
 # user_idとpost_idが一致するlikeを検索する
   end
 
-  def save_tag(savepost_tags)
-    current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?
-    old_tags = current_tags - savepost_tags
-    new_tags = savepost_tags - current_tags
-
-    old_tags.each do |old_name|
-      self.tags.delete Tag.find_by(tag_name: old_name)
-    end
-
-    new_tags.each do |new_name|
-      post_tag = Tag.find_or_create_by(tag_name: new_name)
-      self.tags << post_tag
+  #DBへのコミット直前に実施する
+  after_create do
+    post = Post.find_by(id: self.id)
+    hashtags  = self.body.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
+    post.hashtags = []
+    hashtags.uniq.map do |hashtag|
+      #ハッシュタグは先頭の'#'を外した上で保存
+      tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
+      post.hashtags << tag
     end
   end
+
+  before_update do
+    post = Post.find_by(id: self.id)
+    post.hashtags.clear
+    hashtags = self.body.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
+    hashtags.uniq.map do |hashtag|
+      tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
+      post.hashtags << tag
+    end
+  end
+
 end

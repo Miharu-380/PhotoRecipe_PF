@@ -6,16 +6,13 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     get 'about' => 'homes#about'
 
-    resources :posts, only: [:new, :create, :edit, :show, :destroy,:update] do
+    resources :posts do
       resources :reviews, only: [:create, :destroy]
       resources :likes, only: [:create, :destroy]
   #     resources :bookmarks, only: [:create, :destroy, :index]
     end
 
-    resources :tags 
-    # do
-  #     get 'posts', to: 'posts#search'
-  # end
+  get '/post/hashtag/:name', to: "posts#hashtag"
 
   #   resources :contacs, only: [:new, :create]
   #   get 'contacts/complete' => 'contacts#complete'
