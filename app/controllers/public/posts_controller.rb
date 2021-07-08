@@ -20,7 +20,7 @@ class Public::PostsController < ApplicationController
   end
 
   def show
-    @post_tags = @post.tags
+    @tags = @post.tags
   end
 
   def edit
@@ -29,10 +29,10 @@ class Public::PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    tag_list = params[:micropost][:tag_ids].split(' ')
+    tag_list = params[:post][:tag_ids].split(' ')
     @post.user_id = current_user.id
     if @post.update(post_params)
-      @post.save_tags(tag_list)
+      @post.save_tag(tag_list)
       redirect_to post_path(@post)
       flash[:投稿を更新しました]
     else
