@@ -47,6 +47,17 @@ class Public::PostsController < ApplicationController
     @posts = @tag.posts
   end
 
+  def search
+    redirect_to root_path if params[:keyword] == ""
+    split_keyword = params[:keyword].split(/[[:blank:]]+/)
+    @posts = []
+    split_keyword.each do |keyword|
+      next if keyword == "" # 空欄はスキップ→先頭に空欄がると全てヒットする
+      @posts += Post.where('title LIKE(?) OR body LIKE(?) OR photo_app LIKE(?) OR photo_filter LIKE(?) OR fix_app LIKE(?) OR fix_filter LIKE(?)', "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%")
+    end
+      @posts.uniq! #重複した商品を削除する
+  end
+
  private
 
   def post_params
