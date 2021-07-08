@@ -40,6 +40,12 @@ class Public::PostsController < ApplicationController
     flash[:notice] = "投稿を削除しました"
   end
 
+  def hashtag
+    @user = current_user
+    @tag = Hashtag.find_by(hashname: params[:name])
+    @posts = @tag.posts
+  end
+
  private
 
   def post_params
