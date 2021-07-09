@@ -15,7 +15,8 @@ Rails.application.routes.draw do
       end
     end
 
-    get '/post/hashtag/:name', to: "posts#hashtag"
+    get '/post/hashtag/:name' => "posts#hashtag"
+    get '/post/weekly_rank' => "posts#weekly_rank"
 
   #   resources :contacs, only: [:new, :create]
   #   get 'contacts/complete' => 'contacts#complete'
