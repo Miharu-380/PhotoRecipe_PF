@@ -1,0 +1,17 @@
+<h2>Liked! Users</h2>
+<div class="container-fluid">
+  <div class="card-columns">
+    <% @likes.each do |like| %>
+      <div class="card">
+        <div class="bd-placeholder-img card-img">
+          <%= link_to user_path(like.user) do %>
+            <div class="post-size">
+              <%= attachment_image_tag like.user, :profile_image %>
+            </div>
+            <%= like.user.username %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

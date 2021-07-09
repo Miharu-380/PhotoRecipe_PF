@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       end
     end
 
+    get '/posts/:id/likes' => "posts#like", as: 'like_index'
     get '/post/hashtag/:name' => "posts#hashtag"
     get '/post/weekly_rank' => "posts#weekly_rank"
 
