@@ -1,6 +1,7 @@
 class Public::PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: [:edit, :show]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def new
     @post = Post.new
@@ -58,6 +59,16 @@ class Public::PostsController < ApplicationController
       @posts.uniq! #重複した商品を削除する
   end
 
+  def weekly_rank
+    to  = Time.current.at_end_of_day
+    from  = (to - 6.day).at_beginning_of_day
+    @posts = Post.includes(:liked_users).
+      sort {|a,b| 
+        b.liked_users.includes(:likes).where(created_at: from...to).size <=> 
+        a.liked_users.includes(:likes).where(created_at: from...to).size
+      }
+  end
+
  private
 
   def post_params
@@ -66,5 +77,11 @@ class Public::PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def ensure_correct_user
+    unless @book.user == current_user
+      redirect_to books_path
+    end
   end
 end

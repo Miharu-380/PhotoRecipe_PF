@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   attachment :image
   has_many :likes, -> { order(created_at: :desc) }, dependent: :destroy
+  has_many :liked_users, through: :likes, source: :user
   has_many :reviews, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   has_many :post_hashtags
@@ -10,7 +11,7 @@ class Post < ApplicationRecord
   def liked_by(user)
     Like.find_by(user_id: user.id, post_id: id) # user_idとpost_idが一致するlikeを検索する
   end
-  
+
   def bookmarked_by(user)
     Bookmark.find_by(user_id: user.id, post_id: id)
   end
