@@ -42,7 +42,7 @@ class Public::PostsController < ApplicationController
   end
 
   def hashtag
-    @user = current_user
+    # @user = current_user
     @tag = Hashtag.find_by(hashname: params[:name])
     @posts = @tag.posts
   end
