@@ -1,0 +1,2 @@
+$('#bookmark-icon-post-<%= @post.id.to_s %>').
+  html('<%= link_to "お気に入りを外す", post_bookmark_path(@post.id, @bookmark), method: :DELETE, remote: true, class: "bookmarked hide-text" %>');

@@ -144,6 +144,24 @@ header {
   // 詰めて表示
 }
 
+// お気に入り機能
+.bookmark {
+  background-image: url("bookmark-off.png");
+  background-repeat: no-repeat;
+  margin: 3px;
+  height: 30px;
+  width: 30px;
+  background-size: 30px !important;
+}
+
+.bookmarked {
+  background-image: url("bookmark-on.png");
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  background-size: 30px !important;
+}
+
 // コメント機能
 .no-text-decoration:hover {
   text-decoration: none;

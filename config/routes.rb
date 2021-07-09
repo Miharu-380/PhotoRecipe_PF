@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :posts do
       resources :reviews, only: [:create, :destroy]
       resources :likes, only: [:create, :destroy]
-  #     resources :bookmarks, only: [:create, :destroy, :index]
+      resources :bookmarks, only: [:create, :destroy]
       collection do
         get 'search'
       end
