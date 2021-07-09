@@ -1,14 +1,14 @@
 <header class="fixed-top">
-<nav class="nav">
-  <ul class="nav-items">
-    <!--検索フォーム-->
-    <li class="nav-item">
-      <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |f| %>
-        <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-        <%= f.submit "検索", class: "search-btn" %>
-      <% end %>
-    </li>
-    
+  <nav class="nav">
+    <ul class="nav-items">
+      <!--検索フォーム-->
+      <li class="nav-item">
+        <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |f| %>
+          <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+          <%= f.submit "検索", class: "search-btn" %>
+        <% end %>
+      </li>
+  
       <% if user_signed_in? %>
         <li class="nav-item">
           <span><%= link_to "Make a Recipe!", new_post_path, class: "nav-link" %></span>
@@ -19,7 +19,14 @@
         <li class="nav-item">
           <span><%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %></span>
         </li>
+      <% else %>
+        <li class="nav-item">
+          <span><%= link_to "Login", new_user_session_path, class: "nav-link" %></span>
+        </li>
+        <li class="nav-item">
+          <span><%= link_to "Signup!", new_user_registration_path, class: "nav-link" %></span>
+        </li>
       <% end %>
-  </ul>
-</nav>
+    </ul>
+  </nav>
 </header>

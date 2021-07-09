@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 2021_07_09_053008) do
     t.integer "user_id"
     t.text "title"
     t.string "image_id", null: false
-    t.text "hashbody"
     t.string "photo_app", null: false
     t.string "photo_filter"
     t.string "fix_app"
