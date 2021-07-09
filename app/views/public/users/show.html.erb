@@ -28,5 +28,6 @@
 <br>
 <% if current_user == @user %>
 <%= link_to "マイページ編集", edit_user_path(current_user) %>
+<%= link_to "ブックマーク一覧", bookmark_path(current_user) %>
 <% end %>
 <br>

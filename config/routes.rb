@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   	  get 'followers' => 'relationships#followers', as: 'followers'
     end
     get 'users/:id/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
+    get 'users/:id/bookmark' => 'users#bookmark', as: 'bookmark'
   end
 
   # get 'searches/search' => 'search#search'

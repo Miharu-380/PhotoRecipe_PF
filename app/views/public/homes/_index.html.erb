@@ -1,13 +1,13 @@
 <div class="card-columns">
-<% posts.each do |post| %>
-<div class="card">
-  <div class="bd-placeholder-img card-img">
-    <%= link_to post_path(post) do %>
-      <div class="post-size">
-        <%= attachment_image_tag post, :image %>
+  <% posts.each do |post| %>
+    <div class="card">
+      <div class="bd-placeholder-img card-img">
+        <%= link_to post_path(post) do %>
+          <div class="post-size">
+            <%= attachment_image_tag post, :image %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
-</div>
-<% end %>
+    </div>
+  <% end %>
 </div>

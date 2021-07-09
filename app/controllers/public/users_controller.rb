@@ -29,6 +29,9 @@ class Public::UsersController < ApplicationController
     flash[:notice] = "ご利用ありがとうございました。"
   end
 
+  def bookmark
+    @bookmarks = Bookmark.where(user_id: current_user.id)
+  end
  private
 
   def user_params
