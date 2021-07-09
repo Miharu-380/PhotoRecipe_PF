@@ -42,6 +42,11 @@ class Public::PostsController < ApplicationController
     flash[:notice] = "投稿を削除しました"
   end
 
+  def like
+    @post = Post.find(params[:id])
+    @likes = Like.where(post_id: @post.id)
+  end
+
   def hashtag
     # @user = current_user
     @tag = Hashtag.find_by(hashname: params[:name])
@@ -63,8 +68,8 @@ class Public::PostsController < ApplicationController
     to  = Time.current.at_end_of_day
     from  = (to - 6.day).at_beginning_of_day
     @posts = Post.includes(:liked_users).
-      sort {|a,b| 
-        b.liked_users.includes(:likes).where(created_at: from...to).size <=> 
+      sort {|a,b|
+        b.liked_users.includes(:likes).where(created_at: from...to).size <=>
         a.liked_users.includes(:likes).where(created_at: from...to).size
       }
   end
