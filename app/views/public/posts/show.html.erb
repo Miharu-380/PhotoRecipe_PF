@@ -22,6 +22,8 @@
     <%= render "like_text", { likes: @post.likes, post: @post } %>
   </div>
 
+  <%= link_to "ツイート共有", "https://twitter.com/share?url=#{ request.url }/&text=スマフォトレシピ！に写真を投稿しました/&hashtags=スマフォトレシピ", class: 'tweet-btn hide-text', target: '_blank' %>
+
   <!--ブックマークボタン-->
   <div id="bookmark-icon-post-<%= @post.id.to_s %>">
     <% if @post.bookmarked_by(current_user).present? %>
