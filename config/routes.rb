@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     end
     get 'users/:id/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
     get 'users/:id/bookmark' => 'users#bookmark', as: 'bookmark'
+    get 'users/:id/timeline' => 'users#timeline', as: 'timeline'
   end
 
   # get 'searches/search' => 'search#search'
