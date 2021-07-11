@@ -1,0 +1,7 @@
+ja:
+  enums:
+    contact:
+      subject:
+        question: "質問"
+        wantto_delete: "退会したい"
+        everything: "その他"
