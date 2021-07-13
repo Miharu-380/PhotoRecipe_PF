@@ -10,7 +10,7 @@
     </tr>
     <tr>
       <td class="text-center">用件</td>
-      <td><%= @contact.subject %></td>
+      <td><%= @contact.subject_i18n %></td>
     </tr>
     <tr>
       <td class="text-center">メッセージ</td>
@@ -19,17 +19,17 @@
   </tbody>
 </table>
 
-<%= form_with model: @contact do |f| %>
+<%= form_with model: @contact, url: contacts_path, method: :post, local: true do |f| %>
   <%= f.hidden_field :name %>
   <%= f.hidden_field :email %>
   <%= f.hidden_field :subject %>
   <%= f.hidden_field :message %>
   <div><%= f.submit '送信' %></div>
 <% end %>
-<%= form_with model: @contact, url: contacts_back_path do |f| %>
+<%= form_with model: @contact, url: contacts_back_path, method: :post, local: true do |f| %>
   <%= f.hidden_field :name %>
   <%= f.hidden_field :email %>
   <%= f.hidden_field :subject %>
   <%= f.hidden_field :message %>
-  <div><%= f.submit '入力画面に戻る' %></div>
+  <%= f.submit '入力画面に戻る' %>
 <% end %>

@@ -2,7 +2,11 @@ ja:
   enums:
     contact:
       subject:
-        selection: "-----選択してください-----"
         question: "質問"
         wantto_delete: "退会したい"
         everything: "その他"
+
+  activerecord:
+    models:
+      user:
+      board: 掲示板

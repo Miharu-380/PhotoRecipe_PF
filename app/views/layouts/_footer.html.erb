@@ -4,7 +4,9 @@
   </div>
   <div class="sns">
     <div class="">
-  	<a href="#" class="contact"><i class="far fa-envelope" aria-hidden="true"></i></a>
+    <%= link_to new_contact_path do %>
+  	  <i class="far fa-envelope" aria-hidden="true"></i>
+  	<% end %>
     <%= link_to "https://www.facebook.com/share.php?url=#{ request.url }", target: "_blank" do %>
   	  <i class="fab fa-facebook fa-fw" aria-hidden="true"></i>
   	<% end %>

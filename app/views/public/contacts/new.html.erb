@@ -1,4 +1,4 @@
-<%= form_with model: @contact, local:true do |f| %>
+<%= form_with model: @contact, url: contacts_confirm_path, local:true do |f| %>
   <%= render 'layouts/error', obj: @contact %>
   <div class="form-group">
     <%= f.label :name, 'お名前*' %>
@@ -10,7 +10,7 @@
   </div>
   <div class="form-group">
     <%= f.label :subject, '用件*' %>
-    <%= f.select :subject, Contact.subjects_i18n.invert, {prompt: false}, class: "form-control" %>
+    <%= f.select :subject, Contact.subjects_i18n.invert, {prompt: "-----選択してください-----"}, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :message, 'メッセージ*' %>
