@@ -2,11 +2,44 @@ ja:
   enums:
     contact:
       subject:
-        question: "質問"
-        wantto_delete: "退会したい"
-        everything: "その他"
+        question: 質問
+        wantto_delete: 退会したい
+        everything: その他
 
   activerecord:
-    models:
+    attributes:
       user:
-      board: 掲示板
+        name: お名前
+        email: メールアドレス
+        introduction: 自己紹介
+        password: パスワード
+        password_confirmation: パスワード(確認用)
+      hashtag:
+        hashname: タグ名
+      post:
+        title: タイトル
+        photo_app: 撮影アプリ
+        photo_filter: 撮影フィルター
+        fix_app: 加工アプリ
+        fix_filter: 加工フィルター
+        exposure: 露出
+        highlight: ハイライト
+        burilliance: ブリリアンス
+        shadow: シャドウ
+        contrast: コントラスト
+        brightness: 明るさ
+        saturation: 彩度
+        warmth: 暖かさ
+        sharpness: シャープネス
+        body: 詳細
+      review:
+        review: コメント
+      contact:
+        name: お名前
+        email: メールアドレス
+        subject: お問い合わせカテゴリー
+        message: お問い合わせ内容
+
+      admin:
+        email: メールアドレス
+        password: パスワード
