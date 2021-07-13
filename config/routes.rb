@@ -19,13 +19,10 @@ Rails.application.routes.draw do
     get '/post/hashtag/:name' => "posts#hashtag"
     get '/post/weekly_rank' => "posts#weekly_rank"
 
-  #   resources :contacs, only: [:new, :create]
-  #   get 'contacts/complete' => 'contacts#complete'
-
-  #   resources :contacts, only: [:new, :create]
-  #   post 'contacts/confirm' => 'contacts#confirm', as: 'contacts_confirm'
-  #   post 'contacts/back' => 'contacts#back'
-  #   get 'contacts/done' => 'contacts#done'
+    resources :contacts, only: [:new, :create]
+    post 'contacts/confirm' => 'contacts#confirm', as: 'contacts_confirm'
+    post 'contacts/back' => 'contacts#back'
+    get 'contacts/done' => 'contacts#done'
 
     resources :users, only: [:show, :edit, :update, :destroy] do
       resource :relationships, only: [:create, :destroy]
@@ -35,9 +32,8 @@ Rails.application.routes.draw do
     get 'users/:id/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
     get 'users/:id/bookmark' => 'users#bookmark', as: 'bookmark'
     get 'users/:id/timeline' => 'users#timeline', as: 'timeline'
-  end
 
-  # get 'searches/search' => 'search#search'
+  end
 
   # # ========== 管理者(admin) ==========
   devise_for :admins, controllers: {
