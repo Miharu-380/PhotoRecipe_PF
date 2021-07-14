@@ -1,7 +1,7 @@
 class Public::PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: [:edit, :show]
-  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+  before_action :ensure_correct_user, only: [:edit]
 
   def new
     @post = Post.new
@@ -29,7 +29,7 @@ class Public::PostsController < ApplicationController
     @post.user_id = current_user.id
     if @post.update(post_params)
       redirect_to post_path(@post)
-      flash[:投稿を更新しました]
+      flash[:notice] = "投稿を更新しました"
     else
       render 'edit'
     end
@@ -85,8 +85,8 @@ class Public::PostsController < ApplicationController
   end
 
   def ensure_correct_user
-    unless @book.user == current_user
-      redirect_to books_path
+    unless @post.user == current_user
+      redirect_to posts_path
     end
   end
 end

@@ -1,69 +1,146 @@
-<div class="container">
-  <div class="col-10 mx-auto">
-    <div class="profile-shape">
-      <%= attachment_image_tag @post.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %>
-      <%= link_to user_path(@post.user) do %>
-        <%= @post.user.username %>
-      <% end %>
-    </div>
-
-    <div class="post-size-show text-center">
-      <%= link_to @post.image.url, "data-lightbox": @post.image.url do %>
-        <%= image_tag @post.image.url %>
-      <% end %>
-    </div>
-
-    <div class="d-flex">
-      <!--いいねボタン-->
-      <div class="d-flex mr-auto p-2 bd-highlight">
-        <div id="like-icon-post-<%= @post.id.to_s %>">
-          <% if @post.liked_by(current_user).present? %>
-            <%= link_to "いいねを取り消す", post_like_path(@post.id, @post.liked_by(current_user)), method: :DELETE, remote: true, class: "loved hide-text" %>
-          <% else %>
-            <%= link_to "いいね", post_likes_path(@post), method: :POST, remote: true, class: "love hide-text" %>
+<div class="container d-flex justify-content-center">
+  <div class="post-content col-7">
+      <div class="d-flex">
+        <div class="profile-shape mr-auto p-2 bd-highlight">
+          <%= attachment_image_tag @post.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %>
+          <%= link_to user_path(@post.user) do %>
+            <%= @post.user.username %>
           <% end %>
         </div>
-        <div id="like-text-post-<%= @post.id.to_s %>" class="mt-2">
-          <%= render "like_text", { likes: @post.likes, post: @post } %>
-        </div>
-      </div>
-
-      <!--ツイート共有ボタン-->
-      <div class="p-2 bd-highlight">
-        <%= link_to "ツイート共有", "https://twitter.com/share?url=#{ request.url }/&text=フォトレシピを投稿しました！&hashtags=スマフォトレシピ", class: 'tweet-btn hide-text', target: '_blank' %>
-      </div>
-
-      <!--ブックマークボタン-->
-      <div class="p-2 bd-highlight">
-        <div id="bookmark-icon-post-<%= @post.id.to_s %>">
-          <% if @post.bookmarked_by(current_user).present? %>
-            <%= link_to "お気に入りを外す", post_bookmark_path(@post.id, @post.bookmarked_by(current_user)), method: :DELETE, remote: true, class: "bookmarked hide-text" %>
-          <% else %>
-            <%= link_to "お気に入り", post_bookmarks_path(@post), method: :POST, remote: true, class: "bookmark hide-text" %>
+          <% if user_signed_in? && current_user.id == @post.user_id  %>
+            <%= link_to image_tag('edit.png', :size =>'20x20'), edit_post_path(@post), class: "p-4 edit-post" %>
+            <%= link_to image_tag('delete.png', :size =>'20x20'), post_path(@post), class: "p-4 delete-post", method: :delete, "data-confirm" => "本当に削除しますか？" %>
           <% end %>
+      </div>
+
+      <div class="post-size-show text-center">
+        <%= link_to @post.image.url, "data-lightbox": @post.image.url do %>
+          <%= image_tag @post.image.url %>
+        <% end %>
+      </div>
+
+      <div class="d-flex">
+        <!--いいねボタン-->
+        <div class="d-flex mr-auto p-2 bd-highlight">
+          <div id="like-icon-post-<%= @post.id.to_s %>">
+            <% if @post.liked_by(current_user).present? %>
+              <%= link_to "いいねを取り消す", post_like_path(@post.id, @post.liked_by(current_user)), method: :DELETE, remote: true, class: "loved hide-text" %>
+            <% else %>
+              <%= link_to "いいね", post_likes_path(@post), method: :POST, remote: true, class: "love hide-text" %>
+            <% end %>
+          </div>
+          <div id="like-text-post-<%= @post.id.to_s %>" class="mt-2">
+            <%= render "like_text", { likes: @post.likes, post: @post } %>
+          </div>
+        </div>
+
+        <!--ツイート共有ボタン-->
+        <div class="p-2 bd-highlight">
+          <%= link_to "ツイート共有", "https://twitter.com/share?url=#{ request.url }/&text=フォトレシピを投稿しました！&hashtags=スマフォトレシピ", class: 'tweet-btn hide-text', target: '_blank' %>
+        </div>
+
+        <!--ブックマークボタン-->
+        <div class="p-2 bd-highlight">
+          <div id="bookmark-icon-post-<%= @post.id.to_s %>">
+            <% if @post.bookmarked_by(current_user).present? %>
+              <%= link_to "お気に入りを外す", post_bookmark_path(@post.id, @post.bookmarked_by(current_user)), method: :DELETE, remote: true, class: "bookmarked hide-text" %>
+            <% else %>
+              <%= link_to "お気に入り", post_bookmarks_path(@post), method: :POST, remote: true, class: "bookmark hide-text" %>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
 
 
-      <p><%= @post.created_at.strftime('%Y/%m/%d') %>
-      <p><%= @post.title %>
-
-      <% if user_signed_in? && current_user.id == @post.user_id  %>
-        <%= link_to "編集", edit_post_path(@post) %>
-        <%= link_to "削除", post_path(@post), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-      <% end %></p>
-
-      <p>機種・アプリ：<%= @post.photo_app %></p>
-      <p>撮影フィルター：<%= @post.photo_filter %></p>
-      <p>加工アプリ：<%= @post.fix_app %></p>
-      <p>加工フィルター：<%= @post.fix_filter %></p>
-      <p>露出：<%= @post.exposure %>　ハイライト：<%= @post.highlight %>　ブリリアンス：<%= @post.burilliance %>　シャドウ：<%= @post.shadow %></p>
-      <p>コントラスト：<%= @post.contrast %>　明るさ：<%= @post.brightness %>　彩度：<%= @post.saturation %>　暖かさ：<%= @post.warmth %>　シャープネス： <%= @post.sharpness %></p>
-
+      <p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
+      <p><%= @post.title %></p><br>
+      <table>
+        <tr>
+          <th style="width: 75%">撮影機種・アプリ <%= image_tag('app.png', :size =>'20x20') %></th>
+          <td class="align-middle"><%= @post.photo_app %></td>
+        </tr>
+        <tr>
+          <th style="width: 75%">撮影フィルター <%= image_tag('filter.png', :size =>'20x20') %></th>
+          <td><%= @post.photo_filter %></td>
+        </tr>
+        <tr>
+          <th style="width: 75%">加工アプリ <%= image_tag('body.png', :size =>'20x20') %></th>
+          <td><%= @post.fix_app %></td>
+        </tr>
+        <tr>
+          <th style="width: 75%">加工フィルター <%= image_tag('settei.png', :size =>'20x20') %></th>
+          <td><%= @post.fix_filter %></td>
+        </tr>
+      </table>
+      <br><br>
+      <div class="d-flex justify-content-between">
+        <table>
+          <tr>
+            <th>露出 <%= image_tag('exposure.png', :size =>'20x20') %></th>
+            <td><%= @post.exposure %></td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <th>ハイライト <%= image_tag('highlight.png', :size =>'20x20') %></th>
+            <td><%= @post.highlight %></td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <th>ブリリアンス <%= image_tag('burilliance.png', :size =>'20x20') %></th>
+            <td><%= @post.burilliance %></td>
+          </tr>
+        </table>
+      </div>
+      <div class="d-flex justify-content-between">
+        <table>
+          <tr>
+            <th>明るさ <%= image_tag('brightness.png', :size =>'20x20') %></th>
+            <td><%= @post.brightness %></td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <th>シャドウ <%= image_tag('shadow.png', :size =>'20x20') %></th>
+            <td><%= @post.shadow %></td>
+          </tr>
+        </table>
+        <table>
+           <tr>
+            <th>コントラスト <%= image_tag('contrast.png', :size =>'20x20') %></th>
+            <td><%= @post.contrast %></td>
+          </tr>
+        </table>
+      </div>
+      <div class="d-flex justify-content-between">
+        <table>
+          <tr>
+            <th>彩度 <%= image_tag('saturation.png', :size =>'20x20') %></th>
+            <td><%= @post.saturation %></td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <th>暖かさ <%= image_tag('warmth.png', :size =>'20x20') %></th>
+            <td><%= @post.warmth %></td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <th>シャープネス <%= image_tag('sharpness.png', :size =>'20x20') %></th>
+            <td><%= @post.sharpness %></td>
+          </tr>
+        </table>
+      </div>
+      <br><br>
       <p><%= render_with_hashtags(@post.body) %></p>
+      <br><br>
+    </div>
 
-    <!--コメント-->
+  <div class="post-comment"><br>
+      <!--コメント-->
+      <p>comments ...</p>
       <div id="review-post-<%= @post.id.to_s %>">
         <%= render 'review_list', { post: @post } %>
       </div>
@@ -72,7 +149,8 @@
           <%= f.hidden_field :user_id, value: current_user.id %>
           <%= f.hidden_field :post_id, value: @post.id %>
           <%= f.text_field :review, class: "form-control border-0", placeholder: "コメント ...", autocomplete: :off %>
-          <%= f.submit "送信", class: "btn btn-outline-dark float-right" %>
+          <%= f.submit "upload comment!", class: "btn btn-outline-dark float-right" %>
         <% end %>
+      </div>
   </div>
 </div>
