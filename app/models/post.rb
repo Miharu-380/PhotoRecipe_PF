@@ -7,6 +7,8 @@ class Post < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :post_hashtags
   has_many :hashtags, through: :post_hashtags
+  
+  validates :image, presence: true
 
   def liked_by(user)
     Like.find_by(user_id: user.id, post_id: id) # user_idとpost_idが一致するlikeを検索する

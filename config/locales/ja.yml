@@ -10,6 +10,7 @@ ja:
     attributes:
       user:
         name: お名前
+        username: ユーザーネーム
         email: メールアドレス
         introduction: 自己紹介
         password: パスワード
@@ -17,6 +18,7 @@ ja:
       hashtag:
         hashname: タグ名
       post:
+        image: 写真
         title: タイトル
         photo_app: 撮影アプリ
         photo_filter: 撮影フィルター
