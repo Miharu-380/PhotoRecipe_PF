@@ -20,6 +20,7 @@
 body {
   margin: 0;
   padding-bottom: 50px;
+  font-family: Georgia, Arial, "Sawarabi Gothic", sans-serif;
 }
 
 header {
@@ -95,9 +96,19 @@ header {
   font-family: Georgia, Arial, sans-serif;
 }
 
+// devise,contact関連
+.necessary {
+  display: inline;
+  color: red;
+}
+
 // TOPページ
 .top-box {
   padding: 85px 50px 50px;
+}
+
+.card {
+  border: none;
 }
 
 .card-columns {
@@ -115,6 +126,10 @@ header {
 // 投稿
 .post-size img {
   width: 100%;
+}
+
+.post-size-show img {
+  width: 80%;
 }
 
 .tweet-btn {

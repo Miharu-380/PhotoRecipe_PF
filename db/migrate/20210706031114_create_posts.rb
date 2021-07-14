@@ -3,7 +3,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
     create_table :posts do |t|
       t.integer :user_id
       t.text :title
-      t.string :image_id, null: false
+      t.string :image, null: false
       t.string :photo_app, null: false
       t.string :photo_filter
       t.string :fix_app
@@ -21,7 +21,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.timestamps
     end
     add_index :posts, :user_id
-    add_index :posts, :image_id
+    add_index :posts, :image
     add_index :posts, :photo_app
   end
 end
