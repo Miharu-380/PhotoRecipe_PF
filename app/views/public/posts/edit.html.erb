@@ -1,7 +1,7 @@
 <%= form_with model: @post, url: post_path, local:true do |f| %>
   <%= render 'layouts/error', obj: @post %>
   <%= f.label "写真" %><br>
-  <%= f.attachment_field :image %><br>
+  <%= f.file_field :image %><br>
   <%= f.label "タイトル" %><br>
   <%= f.text_field :title, autofocus: true, placeholder: "例）海と私" %><br><br>
   <%= f.label "撮影機器・アプリ" %><br>

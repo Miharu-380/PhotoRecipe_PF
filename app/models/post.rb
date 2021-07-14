@@ -1,6 +1,5 @@
 class Post < ApplicationRecord
   belongs_to :user
-  attachment :image
   has_many :likes, -> { order(created_at: :desc) }, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
   has_many :reviews, dependent: :destroy
@@ -8,7 +7,7 @@ class Post < ApplicationRecord
   has_many :post_hashtags
   has_many :hashtags, through: :post_hashtags
   mount_uploader :image, ImageUploader
-  
+
   validates :image, presence: true
 
   def liked_by(user)
