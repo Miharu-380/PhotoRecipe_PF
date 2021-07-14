@@ -6,11 +6,11 @@
         <%= @post.user.username %>
       <% end %>
     </div>
-    <div class="post-size text-center">
-      <%= link_to hoge-image, "data-lightbox": hoge-image do %>
-        <%= image_tag hoge-image, class:"img"%>
+
+    <div class="post-size-show text-center">
+      <%= link_to @post.image.url, "data-lightbox": @post.image.url do %>
+        <%= image_tag @post.image.url %>
       <% end %>
-      <%= attachment_image_tag @post, :image %>
     </div>
 
     <div class="d-flex">

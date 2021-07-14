@@ -4,7 +4,7 @@
       <%= render 'layouts/error', obj: @post %>
       <div class="form-group">
       <%= f.label "写真" %><br>
-      <%= f.attachment_field :image %>
+      <%= f.file_field :image %>
       </div>
 
       <div class="form-group">

@@ -107,6 +107,10 @@ header {
   padding: 85px 50px 50px;
 }
 
+.card {
+  border: none;
+}
+
 .card-columns {
   @include media-breakpoint-only(lg) {
     column-count: 6;
@@ -121,6 +125,10 @@ header {
 
 // 投稿
 .post-size img {
+  width: 100%;
+}
+
+.post-size-show img {
   width: 80%;
 }
 

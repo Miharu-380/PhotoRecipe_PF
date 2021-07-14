@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2021_07_11_123011) do
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
     t.text "title"
-    t.string "image_id", null: false
+    t.string "image", null: false
     t.string "photo_app", null: false
     t.string "photo_filter"
     t.string "fix_app"
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2021_07_11_123011) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["image_id"], name: "index_posts_on_image_id"
+    t.index ["image"], name: "index_posts_on_image"
     t.index ["photo_app"], name: "index_posts_on_photo_app"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
