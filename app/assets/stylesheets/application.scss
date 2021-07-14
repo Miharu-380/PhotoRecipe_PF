@@ -96,10 +96,18 @@ header {
   font-family: Georgia, Arial, sans-serif;
 }
 
+.search-button {
+  display: inline-flex;
+}
+
 // devise,contact関連
 .necessary {
   display: inline;
   color: red;
+}
+
+.mypage-edit {
+  display: inline;
 }
 
 // TOPページ
