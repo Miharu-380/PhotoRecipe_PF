@@ -16,6 +16,7 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
 
 body {
   margin: 0;
@@ -183,6 +184,10 @@ header {
   animation: fadeIn 3s ease 2.5s 1 normal;
 }
 
+.intro-title {
+  font-family: 'RocknRoll One', sans-serif;
+}
+
 @keyframes fadeIn {
     0% {opacity: 0}
     100% {opacity: 1}
@@ -200,6 +205,7 @@ header {
 
 .card {
   border: none;
+  animation: fadeIn 1.5s ease 0s 1 normal;
 }
 
 .card-columns {
@@ -215,9 +221,7 @@ header {
 }
 
 // 投稿
-.post-size {
-  opacity: 0;
-}
+
 
 .post-size img {
   width: 100%;
