@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :bookmarks, only: [:create, :destroy]
       collection do
         get 'search'
+        get 'm_search' => "posts#mobile_search"
       end
     end
 

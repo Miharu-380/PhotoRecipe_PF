@@ -1,0 +1,34 @@
+<div id="fix-phone-under-menu" class="pc-none">
+  <ul class="d-flex justify-content-start">
+    <li>
+      <%= link_to timeline_path(current_user) do %>
+        <i class="fas fa-home"></i><br>
+        <span class="iconname">Timeline</span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to index_path do %>
+        <i class="fas fa-utensils"></i><br>
+        <span class="iconname">Home</span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to m_search_posts_path do %>
+        <i class="fas fa-search"></i><br>
+        <span class="iconname">Search</span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to post_weekly_rank_path do %>
+        <i class="fas fa-crown"></i><br>
+        <span class="iconname">Ranking</span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to new_post_path do %>
+        <i class="far fa-paper-plane"></i><br>
+        <span class="iconname">Make!</span>
+      <% end %>
+    </li>
+  </ul>
+</div>
