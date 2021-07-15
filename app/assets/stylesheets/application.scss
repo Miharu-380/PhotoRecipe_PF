@@ -175,13 +175,21 @@ header {
 
 .introduction {
   position: absolute;
-  top: 30%;
-  left: 55%;
+  top: 25%;
+  left: 60%;
   animation: fadeIn 3s ease 2.5s 1 normal;
 }
 
 .intro-title {
   font-family: 'RocknRoll One', sans-serif;
+}
+
+.tap-top {
+  transition: all 1s linear 0s;
+}
+
+.tap-top:hover {
+  transform: rotateY(360deg);
 }
 
 @keyframes fadeIn {
@@ -345,7 +353,6 @@ footer .sns {
 }
 
 footer .sns a {
-  font-family: Georgia, Arial, sans-serif;
 	font-size: 1.2em;
 	font-weight: bold;
 	line-height: 50px;
@@ -388,7 +395,7 @@ footer .sns a {
   footer {
     display: none;
   }
-  
+
   #search-menu {
     text-align: center;
   }
@@ -517,10 +524,26 @@ footer .sns a {
     text-decoration :none;
   }
 
-  /* このクラスを、jQueryで付与・削除する */
   nav.globalMenuSp.active {
     transform: translateY(0%);
   }
+
+  // aboutページ
+  #about {
+    background-image: url("makeithappen-m.jpg");
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background-position: center;
+  }
+
+  .introduction {
+    position: absolute;
+    padding: 5px;
+    top: 20%;
+    left: 5%;
+  }
+
 
 }
 
