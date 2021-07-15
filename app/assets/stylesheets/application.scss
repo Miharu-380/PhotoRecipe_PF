@@ -1,0 +1,425 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
+body {
+  margin: 0;
+  padding-bottom: 50px;
+  font-family: Georgia, Arial, "Sawarabi Gothic", sans-serif;
+}
+
+header {
+  position: fixed;
+  width: 100vw;
+  background-color: #fff;
+}
+
+// loading画面
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999; // 一番上
+  background: #fff;
+}
+
+#loading-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#loading .kvArea {
+  width: 100%;
+}
+
+#loading .kvArea .img-box {
+  text-align: center;
+}
+
+#loading .kvArea .img-box img {
+  max-width: 100%;
+  height: auto;
+}
+
+.fadeUp {
+  animation-name: fadeUpAnime;
+  animation-duration: 3.0s; // かかる時間
+  animation-delay: 2.0s; // 始まる時間
+  animation-fill-mode: forwards; // 最後の状態でいる
+  opacity: 1; // 不透明
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+// ナビゲーションバー
+.nav {
+    margin: 15px auto;
+    font-family: Georgia, Arial, sans-serif;
+    font-size: 14px;
+    background-color: white;
+}
+
+.nav-items {
+    padding: 0;
+    list-style: none;
+    margin-left: auto;
+}
+
+.nav-item {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+.nav-link,
+.nav-link:link,
+.nav-link:visited,
+.nav-link:active {
+    display: block;
+    position: relative;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+}
+
+.nav-link,
+.nav-link:link,
+.nav-link:visited,
+.nav-link:active {
+    color: #000;
+    font-weight: bold;
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(0,0,0,0.2);
+    opacity: 0;
+    // 透明度：0は透明
+    -webkit-transform: translate(0, 10px);
+    // Chrome&Safari
+    transform: translate(0, 10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    // ease：開始時と終了時は緩やかに変化
+}
+
+.nav-link:hover::before {
+    opacity: 1;
+    -webkit-transform: translate(0, 5px);
+    transform: translate(0, 5px);
+}
+
+.search-button {
+  display: inline-flex;
+}
+
+// devise,contact関連
+.necessary {
+  display: inline;
+  color: red;
+}
+
+.mypage-edit {
+  display: inline;
+}
+
+//TOP(about)ページ
+
+#about {
+  background-image: url("makeithappen.jpg");
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.introduction {
+  position: absolute;
+  top: 30%;
+  left: 55%;
+  animation: fadeIn 3s ease 2.5s 1 normal;
+}
+
+.intro-title {
+  font-family: 'RocknRoll One', sans-serif;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+// TOP/indexページ
+.top-box {
+  padding: 85px 50px 50px;
+}
+
+.card {
+  border: none;
+  animation: fadeIn 1.5s ease 0s 1 normal;
+}
+
+.card-columns {
+  @include media-breakpoint-only(lg) {
+    column-count: 6;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 6;
+  }
+  @include media-breakpoint-only(xs) {
+    column-count: 2;
+  }
+}
+
+// 投稿
+.post-size img {
+  width: 100%;
+}
+
+.post-size-show img {
+  width: 80%;
+}
+
+.tweet-btn {
+  background-image: url("tweet.png");
+  background-repeat: no-repeat;
+  margin: 3px;
+  height: 30px;
+  width: 30px;
+  background-size: 30px !important;
+}
+
+table th {
+  padding: 10px;
+}
+
+// いいね
+.love {
+  background-image: url("like-l.png");
+  background-repeat: no-repeat;
+  height: 36px;
+  width: 36px;
+  background-size: 36px !important;
+}
+
+.loved {
+  background-image: url("red-like.png");
+  background-repeat: no-repeat;
+  height: 36px;
+  width: 36px;
+  background-size: 36px !important;
+}
+
+.hide-text {
+  display: block;
+  overflow: hidden;
+  // 要素の内容が多すぎてブロックに収まらない場合に隠す
+  text-indent: 110%;
+  // ブロック内のテキストの行の前に置く空白
+  white-space: nowrap;
+  // 詰めて表示
+}
+
+.like-link {
+  color: #000;
+}
+
+
+// お気に入り
+.bookmark {
+  background-image: url("bookmark-off.png");
+  background-repeat: no-repeat;
+  margin: 3px;
+  height: 30px;
+  width: 30px;
+  background-size: 30px !important;
+}
+
+.bookmarked {
+  background-image: url("bookmark-on.png");
+  background-repeat: no-repeat;
+  margin: 3px;
+  height: 30px;
+  width: 30px;
+  background-size: 30px !important;
+}
+
+// コメント
+.no-text-decoration:hover {
+  text-decoration: none;
+}
+
+.black-color {
+  color: #262626;
+}
+
+.delete-review {
+  background-image: url("delete.png");
+  background-repeat: no-repeat;
+  width: 15px;
+  height: 15px;
+  float: right;
+  margin: 5px 0 0 10px;
+  background-size: 15px !important;
+}
+
+// ユーザーアイコン
+.profile-shape img {
+  border-radius: 50%;
+}
+
+// フッター
+footer {
+	bottom: 0;
+	display: inline-block;
+	width: 100%;
+	height: 50px;
+	margin: 0;
+	background-color: #fff;
+	box-shadow: 0 -3px 3px 0 rgba(0,0,0,0.2);
+// 	box-shadow: 右0 上3 ぼかしの大きさ 影の大きさ;
+}
+
+footer .copyright {
+	float: left;
+	width: 60%;
+}
+
+footer .copyright p {
+  font-family: Georgia, Arial, sans-serif;
+	font-size: 0.9em;
+	line-height: 50px;
+	padding-left: 10%;
+	letter-spacing: 1px;
+	color: #000;
+}
+
+footer .sns {
+	float: right;
+	padding-right: 8%;
+}
+
+footer .sns a {
+  font-family: Georgia, Arial, sans-serif;
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 50px;
+	text-decoration: none;
+	color: #000;
+	padding-right: 10px;
+}
+
+.fab:hover, .far:hover {
+  animation: upDown 1s infinite alternate;
+}
+
+@keyframes upDown {
+  0% {transform: translateY(0px);}
+  25% {transform: translateY(-10px);}
+  50% {transform: translateY(0px);}
+  75% {transform: translateY(-10px);}
+  100% {transform: translateY(0px);}
+}
+
+.pc-none {
+  display: none;
+}
+
+// メディアクエリ（スマホ）
+@media screen and (max-width:480px) {
+
+  .pc-none {
+    display: block;
+  }
+
+  .fixed-top {
+    display: none;
+  }
+
+  .top-box {
+    padding: 50px 0 0;
+  }
+
+  footer {
+    display: none;
+  }
+
+  #fix-phone-under-menu {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: white;
+    width: 100%;
+  }
+
+  #fix-phone-under-menu ul {
+    padding: 0px;
+  }
+
+  #fix-phone-under-menu li {
+    width: 100%;
+    list-style: none;
+    text-align: center;
+  }
+
+  #fix-phone-under-menu li a {
+    color: #d9d4cf;
+  }
+
+  #fix-phone-under-menu a span {
+    display: block;
+    font-size: 4px;
+  }
+
+  #search-menu {
+    text-align: center;
+  }
+
+}
+
+

@@ -1,0 +1,6 @@
+<% if admin_signed_in? %>
+<%= link_to "ログアウト", destroy_admin_session_path, method: :delete %><br>
+<%= link_to "ユーザー一覧", admin_users_path %>
+<% end %>
+<br>
+<%= render 'public/homes/index', posts: @posts %>

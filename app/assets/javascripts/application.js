@@ -10,7 +10,17 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
+
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+//ローディング画面の表示
+/*global $*/
+$(window).on('load',function(){
+  $("#loading").delay(2500).fadeOut('slow');  //ローディング画面を2.5秒（2500ms）待機してからフェードアウト
+});

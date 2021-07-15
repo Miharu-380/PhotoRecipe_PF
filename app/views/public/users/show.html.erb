@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="col-12 mx-auto text-center">
+    <div class="profile-shape">
+      <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
+      <div class="mypage-edit">
+        <%= @user.username %>
+        <% if current_user == @user %>
+          <%= link_to edit_user_path(current_user) do %>
+            <%= image_tag 'haguruma.png', :size =>'15x15' %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <br>
+    <%= @user.introduction %>
+    <br><br>
+    <% unless current_user == @user %>
+      <%= render 'follow', user: @user %>
+    <% end %>
+    <br><br>
+    followers
+    <%= link_to user_followers_path(@user), class: "ml-1 mr-3" do %>
+      <%= @user.followers.count %>
+    <% end %>
+    followings
+    <%= link_to user_followings_path(@user), class: "ml-1 mr-3" do %>
+      <%= @user.followings.count %>
+    <% end %>
+    <%= link_to bookmark_path(@user) do %>
+      <%= image_tag 'bookmark-on.png', :size => '15x15', class: "ml-3" %>
+    <% end %>
+    <br><br>
+    <div class="card-columns">
+      <% @posts.each do |post| %>
+        <div class="card">
+          <div class="bd-placeholder-img card-img">
+            <%= link_to post_path(post) do %>
+              <div class="post-size">
+                <%= image_tag post.image.url %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

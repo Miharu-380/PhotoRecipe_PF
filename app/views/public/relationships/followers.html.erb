@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="col-12 mx-auto">
+    <h2>Followers...</h2>
+    <% if @users.exists? %>
+      <% @users.each do |user| %>
+      <div class="followerings">
+        <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size: "60x60" %></th>
+        <%= link_to user_path(user) do %>
+          <%= user.username %>
+        <% end %>
+      </dic>
+      <% end %>
+    <% else %>
+      <p>ユーザーはいません</p>
+    <% end %>
+  </div>
+</div>
