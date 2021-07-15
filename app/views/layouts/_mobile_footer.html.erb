@@ -1,5 +1,6 @@
 <div id="fix-phone-under-menu" class="pc-none">
   <ul class="d-flex justify-content-start">
+    <% if user_signed_in? %>
     <li>
       <%= link_to timeline_path(current_user) do %>
         <i class="fas fa-home"></i><br>
@@ -30,5 +31,6 @@
         <span class="iconname">Make!</span>
       <% end %>
     </li>
+    <% end %>
   </ul>
 </div>
