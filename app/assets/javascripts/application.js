@@ -18,3 +18,9 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+//ローディング画面の表示
+/*global $*/
+$(window).on('load',function(){
+  $("#loading").delay(2500).fadeOut('slow');  //ローディング画面を2.5秒（2500ms）待機してからフェードアウト
+});

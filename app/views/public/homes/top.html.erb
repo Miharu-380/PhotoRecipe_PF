@@ -1,3 +1,24 @@
-<div class="container-fluid">
-  <%= render 'index', posts: @posts %>
+<div id="loading">
+  <div class="kvArea" id="loading-logo">
+    <div class="img-box"><%= image_tag 'iphonecamera.jpg', class: "fadeUp" %></div>
+  </div>
+</div>
+
+<div id="about">
+  <div class="introduction">
+    <h2 class="intro-title">スマフォトレシピ！</h2><br>
+
+    「おしゃれな写真を撮りたいけど、撮り方が分からない！」<br>
+    「みんなどんな風に写真を加工してるの？」<br>
+    「可愛い写真を作れたから共有したい！」<br><br>
+
+    そんな思いを持った人が集まり<br>
+    "写真 × その写真への想い × 撮り方"<br>
+    を共有するSNSです。<br><br>
+
+    撮影に対するこだわりや撮影技術(レシピ)をシェアすることで、<br>
+    写真仲間に出会えたり、交流することができます。<br>
+
+    <%= link_to "GO!", index_path %>
+  </div>
 </div>
