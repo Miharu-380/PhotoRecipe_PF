@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   scope module: :public do
     root to: 'homes#top'
-    get 'about' => 'homes#about'
+    get 'index' => 'homes#index'
 
     resources :posts do
       resources :reviews, only: [:create, :destroy]
