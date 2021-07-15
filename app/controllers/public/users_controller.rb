@@ -27,7 +27,7 @@ class Public::UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(is_deleted: true)
     reset_session
-    redirect_to root_path
+    redirect_to index_path
     flash[:notice] = "ご利用ありがとうございました。"
   end
 
