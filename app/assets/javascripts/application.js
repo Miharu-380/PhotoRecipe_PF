@@ -25,10 +25,11 @@ $(window).on('load',function(){
   $("#loading").delay(2500).fadeOut('slow');  //ローディング画面を2.5秒（2500ms）待機してからフェードアウト
 });
 
+// ハンバーガーメニュー
 $(function() {
     $('.hamburger').click(function() {
         $(this).toggleClass('active');
- 
+
         if ($(this).hasClass('active')) {
             $('.globalMenuSp').addClass('active');
         } else {
