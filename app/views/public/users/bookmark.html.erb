@@ -1,15 +1,20 @@
+<h2>Bookmarks...</h2>
 <div class="container-fluid">
   <div class="card-columns">
-    <% @bookmarks.each do |bookmark| %>
-      <div class="card">
-        <div class="bd-placeholder-img card-img">
-          <%= link_to post_path(bookmark.post) do %>
-            <div class="post-size">
-              <%= image_tag bookmark.post.image.url %>
-            </div>
-          <% end %>
+    <% if @bookmarks.exists? %>
+      <% @bookmarks.each do |bookmark| %>
+        <div class="card">
+          <div class="bd-placeholder-img card-img">
+            <%= link_to post_path(bookmark.post) do %>
+              <div class="post-size">
+                <%= image_tag bookmark.post.image.url %>
+              </div>
+            <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>
+    <% else %>
+      <p>ブックマークはありません</p>
     <% end %>
   </div>
 </div>
