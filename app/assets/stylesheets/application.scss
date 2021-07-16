@@ -161,7 +161,7 @@ header {
 //TOP(about)ページ
 
 #about {
-  background-image: url("makeithappen.jpg");
+  background-image: image-url("makeithappen.jpg");
   position: fixed;
   top: 0;
   left: 0;
@@ -244,7 +244,7 @@ header {
 }
 
 .tweet-btn {
-  background-image: url("tweet.png");
+  background-image: image-url("tweet.png");
   background-repeat: no-repeat;
   margin: 3px;
   height: 30px;
@@ -258,7 +258,7 @@ table th {
 
 // いいね
 .love {
-  background-image: url("like-l.png");
+  background-image: image-url("like-l.png");
   background-repeat: no-repeat;
   height: 36px;
   width: 36px;
@@ -266,7 +266,7 @@ table th {
 }
 
 .loved {
-  background-image: url("red-like.png");
+  background-image: image-url("red-like.png");
   background-repeat: no-repeat;
   height: 36px;
   width: 36px;
@@ -290,7 +290,7 @@ table th {
 
 // お気に入り
 .bookmark {
-  background-image: url("bookmark-off.png");
+  background-image: image-url("bookmark-off.png");
   background-repeat: no-repeat;
   margin: 3px;
   height: 30px;
@@ -299,7 +299,7 @@ table th {
 }
 
 .bookmarked {
-  background-image: url("bookmark-on.png");
+  background-image: image-url("bookmark-on.png");
   background-repeat: no-repeat;
   margin: 3px;
   height: 30px;
@@ -317,7 +317,7 @@ table th {
 }
 
 .delete-review {
-  background-image: url("delete.png");
+  background-image: image-url("delete.png");
   background-repeat: no-repeat;
   width: 15px;
   height: 15px;
@@ -540,7 +540,7 @@ footer .sns a {
 
   // aboutページ
   #about {
-    background-image: url("makeithappen-m.jpg");
+    background-image: image-url("makeithappen-m.jpg");
     position: fixed;
     top: 0;
     bottom: 0;
