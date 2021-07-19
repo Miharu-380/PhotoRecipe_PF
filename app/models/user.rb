@@ -39,12 +39,20 @@ class User < ApplicationRecord
   def following?(user)
     followings.include?(user)
   end
-  
+
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
       user.name = 'Guest'
       user.username = 'guest3'
+    end
+  end
+
+  def self.search(search)
+    if search != ""
+      User.where(['name LIKE(?) OR username LIKE(?) OR email LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%"])
+    else
+      Post.includes(:user).order('created_at DESC')
     end
   end
 end

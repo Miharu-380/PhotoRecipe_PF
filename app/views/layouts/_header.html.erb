@@ -29,6 +29,13 @@
         <li class="nav-item">
           <span><%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %></span>
         </li>
+      <% elsif admin_signed_in? %>
+        <li class="nav-item">
+          <span><%= link_to "Users", admin_users_path, class: "nav-link" %></span>
+        </li>
+        <li class="nav-item">
+          <span><%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %></span>
+        </li>
       <% else %>
         <li class="nav-item">
           <span><%= link_to 'Guest Login!', users_guest_sign_in_path, method: :post, class: "nav-link" %></span>

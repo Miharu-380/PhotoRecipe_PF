@@ -94,7 +94,7 @@ class Public::PostsController < ApplicationController
 
   def ensure_correct_user
     unless @post.user == current_user
-      redirect_to posts_path
+      redirect_to index_path
     end
   end
 end

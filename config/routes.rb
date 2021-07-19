@@ -1,15 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # ========== ユーザー(user) ==========
-  devise_for :users, controllers: {
-        sessions: 'public/sessions',
-        registrations: 'public/registrations',
-  }
-
-  devise_scope :user do
-    post 'users/guest_sign_in' => 'public/sessions#guest_sign_in'
-  end
-
   scope module: :public do
     root to: 'homes#top'
     get 'index' => 'homes#index'
@@ -25,8 +16,8 @@ Rails.application.routes.draw do
       end
     end
 
-    get '/posts/:id/likes' => 'posts#like', as: 'like_index'
-    get '/post/hashtag/:name' => 'posts#hashtag'
+    get 'posts/:id/likes' => 'posts#like', as: 'like_index'
+    get 'post/hashtag/:name' => 'posts#hashtag'
 
     resources :contacts, only: [:new, :create] do
       collection do
@@ -49,6 +40,15 @@ Rails.application.routes.draw do
     get 'users/timeline' => 'users#timeline', as: 'timeline'
   end
 
+  devise_for :users, controllers: {
+        sessions: 'public/sessions',
+        registrations: 'public/registrations',
+  }
+
+  devise_scope :user do
+    post 'users/guest_sign_in' => 'public/sessions#guest_sign_in'
+  end
+
   # # ========== 管理者(admin) ==========
   devise_for :admins, controllers: {
     sessions: 'admins/sessions',
@@ -59,5 +59,6 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'homes#top'
     resources :users, only: [:index, :show, :edit, :update]
+    get 'search' => 'users#search'
   end
 end
