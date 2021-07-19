@@ -3,19 +3,19 @@
     <%= form_with model: @contact, url: contacts_confirm_path, local:true do |f| %>
       <%= render 'layouts/error', obj: @contact %>
       <div class="form-group">
-        <%= f.label :name, 'お名前*' %>
+        <%= f.label :name, 'お名前' %><div class="necessary">*</div>
         <%= f.text_field :name, autofocus: true, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :email, 'メールアドレス*' %>
+        <%= f.label :email, 'メールアドレス' %><div class="necessary">*</div>
         <%= f.text_field :email, autofocus: true, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :subject, '用件*' %>
+        <%= f.label :subject, '用件' %><div class="necessary">*</div>
         <%= f.select :subject, Contact.subjects_i18n.invert, {prompt: "-----選択してください-----"}, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label :message, 'メッセージ*' %>
+        <%= f.label :message, 'メッセージ' %><div class="necessary">*</div>
         <%= f.text_area :message, size: '10x10', class: 'form-control' %>
       </div>
 

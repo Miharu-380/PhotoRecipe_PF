@@ -7,7 +7,6 @@ class Public::ContactsController < ApplicationController
   def confirm
     @contact = Contact.new(contact_params)
     if @contact.invalid?
-      flash[:alert] = "すべて入力してください。"
       render :new
     end
   end
