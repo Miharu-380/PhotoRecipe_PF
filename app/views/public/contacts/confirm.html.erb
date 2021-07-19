@@ -28,7 +28,7 @@
         <%= f.hidden_field :message %>
         <%= f.submit '送信', class: "btn btn-success mr-3" %>
       <% end %>
-      <%= form_with model: @contact, url: contacts_back_path, method: :post, local: true do |f| %>
+      <%= form_with model: @contact, url: back_contacts_path, method: :post, local: true do |f| %>
         <%= f.hidden_field :name %>
         <%= f.hidden_field :email %>
         <%= f.hidden_field :subject %>

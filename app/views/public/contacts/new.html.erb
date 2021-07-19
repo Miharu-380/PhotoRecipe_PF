@@ -1,6 +1,6 @@
 <div class="container">
   <div class="col-12 mx-auto">
-    <%= form_with model: @contact, url: contacts_confirm_path, local:true do |f| %>
+    <%= form_with model: @contact, url: contacts_confirm_contacts_path, local:true do |f| %>
       <%= render 'layouts/error', obj: @contact %>
       <div class="form-group">
         <%= f.label :name, 'お名前' %><div class="necessary">*</div>
