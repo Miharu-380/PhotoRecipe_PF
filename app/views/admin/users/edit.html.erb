@@ -1,6 +1,6 @@
 <div class="container">
   <div class="col-12 mx-auto">
-    <%= form_with model: @user, url: user_path, local: true do |f| %>
+    <%= form_with model: @user, url: admin_user_path, local: true do |f| %>
       <%= render 'layouts/error', obj: @user %>
       <div class="profile-shape">
       <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %>
@@ -29,11 +29,14 @@
       <%= f.label "メールアドレス" %>
       <%= f.email_field :email, autofocus: true, placeholder: "sample@example.com", class: "form-control" %>
       </div>
+      <br>
+      <div>
+      <%= f.label "会員ステータス", class: "mr-5 mb-5"%>
+      <%= f.radio_button :is_deleted, "false" %>有効 　　<%= f.radio_button :is_deleted, "true" %>退会
+      </div>
 
       <%= f.submit "編集内容を保存", class: "btn btn-outline-info w-100" %>
       <br><br>
-      <p>退会したい場合は<%= link_to "こちら", unsubscribe_user_path(@user) %></p>
-
     <% end %>
   </div>
 </div>

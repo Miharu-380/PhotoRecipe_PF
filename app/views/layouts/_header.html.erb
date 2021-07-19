@@ -18,10 +18,10 @@
           <span><%= link_to "Make a Recipe!", new_post_path, class: "nav-link" %></span>
         </li>
         <li class="nav-item">
-          <span><%= link_to "Timeline", timeline_path(current_user), class: "nav-link" %></span>
+          <span><%= link_to "Timeline", timeline_user_path(current_user.id), class: "nav-link" %></span>
         </li>
         <li class="nav-item">
-          <span><%= link_to "Ranking", post_weekly_rank_path, class: "nav-link" %></span>
+          <span><%= link_to "Ranking", weekly_rank_posts_path, class: "nav-link" %></span>
         </li>
         <li class="nav-item">
           <span><%= link_to "Mypage", user_path(current_user), class: "nav-link" %></span>
@@ -29,12 +29,22 @@
         <li class="nav-item">
           <span><%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %></span>
         </li>
+      <% elsif admin_signed_in? %>
+        <li class="nav-item">
+          <span><%= link_to "Users", admin_users_path, class: "nav-link" %></span>
+        </li>
+        <li class="nav-item">
+          <span><%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %></span>
+        </li>
       <% else %>
+        <li class="nav-item">
+          <span><%= link_to 'Guest Login!', users_guest_sign_in_path, method: :post, class: "nav-link" %></span>
+        </li>
         <li class="nav-item">
           <span><%= link_to "Login", new_user_session_path, class: "nav-link" %></span>
         </li>
         <li class="nav-item">
-          <span><%= link_to "Signup!", new_user_registration_path, class: "nav-link" %></span>
+          <span><%= link_to "Signup", new_user_registration_path, class: "nav-link" %></span>
         </li>
       <% end %>
     </ul>

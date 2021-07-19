@@ -18,7 +18,7 @@ class User < ApplicationRecord
 
   USERNAME_REGEXP = /\A[a-zA-Z0-9][\w-]+\z/ # 半角英数字記号_-のみ
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i # 有効なメールアドレス
-  validates :name, presence: true, length: {maximum: 50 }
+  validates :name, presence: true, length: { maximum: 50 }
   validates :username, format: { with: USERNAME_REGEXP }, presence: true, uniqueness: true
   validates :email, format: { with: VALID_EMAIL_REGEX }, presence: true, uniqueness: true
 
@@ -38,5 +38,21 @@ class User < ApplicationRecord
 
   def following?(user)
     followings.include?(user)
+  end
+
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.name = 'Guest'
+      user.username = 'guest3'
+    end
+  end
+
+  def self.search(search)
+    if search != ""
+      User.where(['name LIKE(?) OR username LIKE(?) OR email LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%"])
+    else
+      Post.includes(:user).order('created_at DESC')
+    end
   end
 end

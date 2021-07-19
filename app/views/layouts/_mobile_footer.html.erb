@@ -2,7 +2,7 @@
   <ul class="d-flex justify-content-start">
     <% if user_signed_in? %>
     <li>
-      <%= link_to timeline_path(current_user) do %>
+      <%= link_to timeline_user_path(current_user) do %>
         <i class="fas fa-home"></i><br>
         <span class="iconname">Timeline</span>
       <% end %>
@@ -20,7 +20,7 @@
       <% end %>
     </li>
     <li>
-      <%= link_to post_weekly_rank_path do %>
+      <%= link_to weekly_rank_posts_path do %>
         <i class="fas fa-crown"></i><br>
         <span class="iconname">Ranking</span>
       <% end %>

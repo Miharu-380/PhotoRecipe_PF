@@ -59,28 +59,33 @@ class Public::PostsController < ApplicationController
     @posts = []
     split_keyword.each do |keyword|
       next if keyword == "" # 空欄はスキップ→先頭に空欄があると全てヒットする
-      @posts += Post.where('title LIKE(?) OR body LIKE(?) OR photo_app LIKE(?) OR photo_filter LIKE(?) OR fix_app LIKE(?) OR fix_filter LIKE(?)', "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%")
+      @posts += Post.where('title LIKE(?) OR body LIKE(?) OR photo_app LIKE(?) OR
+                            photo_filter LIKE(?) OR fix_app LIKE(?) OR fix_filter LIKE(?)',
+                           "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%",
+                           "%#{keyword}%", "%#{keyword}%")
     end
-      @posts.uniq! #重複した商品を削除する
+    @posts.uniq! # 重複箇所削除
   end
-  
+
   def mobile_search
   end
 
   def weekly_rank
-    to  = Time.current.at_end_of_day
-    from  = (to - 6.day).at_beginning_of_day
+    to = Time.current.at_end_of_day
+    from = (to - 6.day).at_beginning_of_day
     @posts = Post.includes(:liked_users).
-      sort {|a,b|
+      sort { |a, b|
         b.liked_users.includes(:likes).where(created_at: from...to).size <=>
         a.liked_users.includes(:likes).where(created_at: from...to).size
       }
   end
 
- private
+  private
 
   def post_params
-    params.require(:post).permit(:image, :title, :photo_app, :photo_filter, :fix_app, :fix_filter, :exposure, :highlight, :burilliance, :shadow, :contrast, :brightness, :saturation, :warmth, :sharpness, :body)
+    params.require(:post).permit(:image, :title, :photo_app, :photo_filter, :fix_app, :fix_filter,
+                                 :exposure, :highlight, :burilliance, :shadow, :contrast,
+                                 :brightness, :saturation, :warmth, :sharpness, :body)
   end
 
   def set_post
@@ -89,7 +94,7 @@ class Public::PostsController < ApplicationController
 
   def ensure_correct_user
     unless @post.user == current_user
-      redirect_to posts_path
+      redirect_to index_path
     end
   end
 end
