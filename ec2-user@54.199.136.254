@@ -1,9 +1,0 @@
-TOMAIL=38t.ajlkk@gmail.com
-
-SMTP_USERNAME=38t.ajlkk@gmail.com
-SMTP_PASSWORD=yucupmijwtpcmqza
-
-DB_USERNAME="root"
-DB_PASSWORD="takahana1161"
-DB_HOST="rds-mysql-server2.cnmxdkfyxgio.ap-northeast-1.rds.amazonaws.com"
-DB_DATABASE="PhotoRecipe_PF"
