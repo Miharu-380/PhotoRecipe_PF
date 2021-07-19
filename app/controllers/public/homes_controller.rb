@@ -1,5 +1,4 @@
 class Public::HomesController < ApplicationController
-
   def top
   end
 
@@ -7,5 +6,4 @@ class Public::HomesController < ApplicationController
     @posts = Post.all
     @tag_list = Tag.all
   end
-
 end

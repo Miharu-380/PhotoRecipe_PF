@@ -16,8 +16,8 @@ class Public::BookmarksController < ApplicationController
       respond_to :js
     end
   end
-  
-private
+
+  private
 
   def bookmark_params
     params.permit(:post_id)

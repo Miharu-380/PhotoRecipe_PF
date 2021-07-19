@@ -18,7 +18,7 @@ class User < ApplicationRecord
 
   USERNAME_REGEXP = /\A[a-zA-Z0-9][\w-]+\z/ # 半角英数字記号_-のみ
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i # 有効なメールアドレス
-  validates :name, presence: true, length: {maximum: 50 }
+  validates :name, presence: true, length: { maximum: 50 }
   validates :username, format: { with: USERNAME_REGEXP }, presence: true, uniqueness: true
   validates :email, format: { with: VALID_EMAIL_REGEX }, presence: true, uniqueness: true
 

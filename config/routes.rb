@@ -27,26 +27,23 @@ Rails.application.routes.draw do
 
     resources :users, only: [:show, :edit, :update, :destroy] do
       resource :relationships, only: [:create, :destroy]
-    	get 'followings' => 'relationships#followings', as: 'followings'
-  	  get 'followers' => 'relationships#followers', as: 'followers'
+      get 'followings' => 'relationships#followings', as: 'followings'
+      get 'followers' => 'relationships#followers', as: 'followers'
     end
     get 'users/:id/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
     get 'users/:id/bookmark' => 'users#bookmark', as: 'bookmark'
     get 'users/:id/timeline' => 'users#timeline', as: 'timeline'
-
   end
 
   # # ========== 管理者(admin) ==========
   devise_for :admins, controllers: {
     sessions: 'admins/sessions',
     registrations: 'admins/registrations',
-    passwords: 'admins/passwords'
+    passwords: 'admins/passwords',
   }
 
   namespace :admin do
     root to: 'homes#top'
     resources :users, only: [:index, :show, :edit, :update]
-  #   resources :contacts, only: [:index, :show]
   end
-
 end

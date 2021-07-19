@@ -36,16 +36,13 @@ class Public::UsersController < ApplicationController
   end
 
   def timeline
-    @feeds = Post.where(user_id: [current_user.id, *current_user.following_ids] )
+    @feeds = Post.where(user_id: [current_user.id, *current_user.following_ids])
     # *で配列を展開して、current_user.idと合体
   end
 
- private
+  private
 
   def user_params
     params.require(:user).permit(:name, :username, :profile_image, :introduction)
   end
-
-
-
 end
