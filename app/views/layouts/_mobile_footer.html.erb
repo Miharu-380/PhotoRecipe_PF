@@ -2,7 +2,7 @@
   <ul class="d-flex justify-content-start">
     <% if user_signed_in? %>
     <li>
-      <%= link_to timeline_path(current_user) do %>
+      <%= link_to timeline_user_path(current_user) do %>
         <i class="fas fa-home"></i><br>
         <span class="iconname">Timeline</span>
       <% end %>

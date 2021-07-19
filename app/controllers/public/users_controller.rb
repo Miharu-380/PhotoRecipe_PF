@@ -42,11 +42,11 @@ class Public::UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :username, :profile_image, :introduction)
   end
-  
-  def set_user
-    @user = User.find(params[:id])
-  end
-  
+
+  # def set_user
+  #   @user = User.find(params[:id])
+  # end
+
   def ensure_correct_user
     unless @user == current_user
       redirect_to index_path

@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # ========== ユーザー(user) ==========
+  devise_for :users, controllers: {
+        sessions: 'public/sessions',
+        registrations: 'public/registrations',
+  }
+
+  devise_scope :user do
+    post 'users/guest_sign_in' => 'public/sessions#guest_sign_in'
+  end
+
   scope module: :public do
     root to: 'homes#top'
     get 'index' => 'homes#index'
@@ -34,19 +43,9 @@ Rails.application.routes.draw do
       member do
         get 'unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
         get 'bookmark' => 'users#bookmark', as: 'bookmark'
+        get 'timeline' => 'users#timeline', as: 'timeline'
       end
     end
-
-    get 'users/timeline' => 'users#timeline', as: 'timeline'
-  end
-
-  devise_for :users, controllers: {
-        sessions: 'public/sessions',
-        registrations: 'public/registrations',
-  }
-
-  devise_scope :user do
-    post 'users/guest_sign_in' => 'public/sessions#guest_sign_in'
   end
 
   # # ========== 管理者(admin) ==========
