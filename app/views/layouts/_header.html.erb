@@ -31,10 +31,13 @@
         </li>
       <% else %>
         <li class="nav-item">
+          <span><%= link_to 'Guest Login!', users_guest_sign_in_path, method: :post, class: "nav-link" %></span>
+        </li>
+        <li class="nav-item">
           <span><%= link_to "Login", new_user_session_path, class: "nav-link" %></span>
         </li>
         <li class="nav-item">
-          <span><%= link_to "Signup!", new_user_registration_path, class: "nav-link" %></span>
+          <span><%= link_to "Signup", new_user_registration_path, class: "nav-link" %></span>
         </li>
       <% end %>
     </ul>
