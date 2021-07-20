@@ -1,5 +1,5 @@
-<div class="container d-flex justify-content-center">
-  <div class="post-content col-7">
+<div class="container post-show">
+  <div class="post-content mx-auto">
       <div class="d-flex">
         <div class="profile-shape mr-auto p-2 bd-highlight">
           <%= attachment_image_tag @post.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %>
@@ -149,7 +149,7 @@
           <%= f.hidden_field :user_id, value: current_user.id %>
           <%= f.hidden_field :post_id, value: @post.id %>
           <%= f.text_field :review, class: "form-control border-0", placeholder: "コメント ...", autocomplete: :off %>
-          <%= f.submit "upload comment!", class: "btn btn-outline-dark float-right" %>
+          <%= f.submit "comment!", class: "btn btn-outline-dark float-right" %>
         <% end %>
       </div>
   </div>
