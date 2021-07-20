@@ -5,7 +5,7 @@
       <div class="mypage-edit">
         <div class="english-big"><%= @user.username %></div>
         <% if current_user == @user %>
-          <%= link_to edit_user_path(current_user) do %>
+          <%= link_to edit_user_path(current_user), data: {"turbolinks" => false} do %>
             <%= image_tag 'haguruma.png', :size =>'15x15' %>
           <% end %>
         <% end %>
@@ -20,23 +20,23 @@
     <br><br>
     <div class="english-big">
       followers
-      <%= link_to user_followers_path(@user), class: "ml-1 mr-3" do %>
+      <%= link_to user_followers_path(@user), class: "ml-1 mr-3", data: {"turbolinks" => false} do %>
         <%= @user.followers.count %>
       <% end %>
       followings
-      <%= link_to user_followings_path(@user), class: "ml-1 mr-3" do %>
+      <%= link_to user_followings_path(@user), class: "ml-1 mr-3", data: {"turbolinks" => false} do %>
         <%= @user.followings.count %>
       <% end %>
     </div>
     <%= link_to bookmark_user_path(@user) do %>
-      <%= image_tag 'bookmark-on.png', :size => '20x20', class: "ml-3" %>
+      <%= image_tag 'bookmark-on.png', :size => '20x20', class: "ml-3", data: {"turbolinks" => false} %>
     <% end %>
     <br><br>
     <div class="card-columns">
       <% @posts.each do |post| %>
         <div class="card">
           <div class="bd-placeholder-img card-img">
-            <%= link_to post_path(post) do %>
+            <%= link_to post_path(post), data: {"turbolinks" => false} do %>
               <div class="post-size">
                 <%= image_tag post.image.url %>
               </div>
