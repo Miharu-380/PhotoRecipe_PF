@@ -7,7 +7,7 @@ class Public::ReviewsController < ApplicationController
     if @review.save
       respond_to :js
     else
-      flash[:alert] = "コメントに失敗しました"
+      flash.now[:alert] = "コメントに失敗しました"
     end
   end
 
@@ -17,7 +17,7 @@ class Public::ReviewsController < ApplicationController
     if @review.destroy
       respond_to :js
     else
-      flash[:alert] = "コメントの削除に失敗しました"
+      flash.now[:alert] = "コメントの削除に失敗しました"
     end
   end
 

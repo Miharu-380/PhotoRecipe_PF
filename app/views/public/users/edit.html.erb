@@ -32,7 +32,7 @@
 
       <%= f.submit "編集内容を保存", class: "btn btn-outline-info w-100" %>
       <br><br>
-      <p>退会したい場合は<%= link_to "こちら", unsubscribe_user_path(@user) %></p>
+      <p>退会したい場合は<%= link_to "こちら", unsubscribe_user_path(@user), data: {"turbolinks" => false} %></p>
 
     <% end %>
   </div>

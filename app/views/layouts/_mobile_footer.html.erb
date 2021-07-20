@@ -2,31 +2,31 @@
   <ul class="d-flex justify-content-start">
     <% if user_signed_in? %>
     <li>
-      <%= link_to timeline_user_path(current_user) do %>
+      <%= link_to timeline_user_path(current_user), data: {"turbolinks" => false} do %>
         <i class="fas fa-home"></i><br>
         <span class="iconname">Timeline</span>
       <% end %>
     </li>
     <li>
-      <%= link_to index_path do %>
+      <%= link_to index_path, data: {"turbolinks" => false} do %>
         <i class="fas fa-utensils"></i><br>
         <span class="iconname">Home</span>
       <% end %>
     </li>
     <li>
-      <%= link_to m_search_posts_path do %>
+      <%= link_to m_search_posts_path, data: {"turbolinks" => false} do %>
         <i class="fas fa-search"></i><br>
         <span class="iconname">Search</span>
       <% end %>
     </li>
     <li>
-      <%= link_to weekly_rank_posts_path do %>
+      <%= link_to weekly_rank_posts_path, data: {"turbolinks" => false} do %>
         <i class="fas fa-crown"></i><br>
         <span class="iconname">Ranking</span>
       <% end %>
     </li>
     <li>
-      <%= link_to new_post_path do %>
+      <%= link_to new_post_path, data: {"turbolinks" => false} do %>
         <i class="far fa-paper-plane"></i><br>
         <span class="iconname">Make!</span>
       <% end %>

@@ -6,7 +6,7 @@
        再度ご利用をいただく場合には、新規登録のお手続きが必要になります。<br><br>
        本当に退会してよろしいですか？<br><br><br>
       </p>
-      <%= link_to "退会する", user_path(@user), method: :delete, class: "btn btn-outline-success mr-3" %>
-      <%= link_to "退会しない", user_path(@user), class: "btn btn-outline-danger" %>
+      <%= link_to "退会する", user_path(@user), method: :delete, class: "btn btn-outline-success mr-3", data: {"turbolinks" => false} %>
+      <%= link_to "退会しない", user_path(@user), class: "btn btn-outline-danger", data: {"turbolinks" => false} %>
   </div>
 </div>
