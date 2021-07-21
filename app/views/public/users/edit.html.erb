@@ -30,6 +30,17 @@
       <%= f.email_field :email, autofocus: true, placeholder: "sample@example.com", class: "form-control" %>
       </div>
 
+      <div class="form-group">
+      <%= f.label "Instagramアカウント" %>
+      <%= f.text_field :instagram, autofocus: true, placeholder: "Photo_recipe", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+      <%= f.label "Twitterアカウント(@のあとから)" %>
+      <%= f.text_field :twitter, autofocus: true, placeholder: "Photo_recipe", class: "form-control" %>
+      </div>
+
+
       <%= f.submit "編集内容を保存", class: "btn btn-outline-info w-100" %>
       <br><br>
       <p>退会したい場合は<%= link_to "こちら", unsubscribe_user_path(@user), data: {"turbolinks" => false} %></p>

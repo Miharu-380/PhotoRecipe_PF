@@ -6,12 +6,35 @@
         <div class="english-big"><%= @user.username %></div>
         <% if current_user == @user %>
           <%= link_to edit_user_path(current_user), data: {"turbolinks" => false} do %>
-            <%= image_tag 'haguruma.png', :size =>'15x15' %>
+            <%= image_tag 'haguruma.png', :size =>'20x20' %>
           <% end %>
         <% end %>
       </div>
     </div>
     <br>
+
+    <!--SNSリンク-->
+    <div class="d-flex justify-content-center">
+      <% if @user.instagram.present? %>
+        <div class="sns-show">
+          <%= link_to "https://www.instagram.com/#{@user.instagram}", target: '_blank', class: "mr-3" do %><!--target: '_blank'は別タブで開く-->
+            <%= image_tag 'Instagram_icon.png', :size =>'20x20' %>
+          <% end %>
+        </div>
+        <br><br>
+      <% end %>
+
+      <% if @user.twitter.present? %>
+        <div class="sns-show d-flex justify-content-center">
+          <%= link_to "https://twitter.com/#{@user.twitter}", target: '_blank' do %>
+            <%= image_tag 'Twitter_icon.png', :size =>'20x20' %>
+          <% end %>
+        </div>
+        <br><br>
+      <% end %>
+
+    </div>
+
     <%= @user.introduction %>
     <br><br>
     <% unless current_user == @user %>
