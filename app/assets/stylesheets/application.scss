@@ -168,6 +168,10 @@ header {
   display: inline;
 }
 
+.sns-show a {
+  text-decoration: none;
+}
+
 //TOP(about)ページ
 #about {
   background-image: image-url("makeithappen.jpg");
