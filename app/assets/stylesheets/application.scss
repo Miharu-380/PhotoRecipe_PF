@@ -18,6 +18,10 @@
 @import "font-awesome";
 @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
 
+html {
+  font-size: calc(10px + 0.25vw)
+}
+
 body {
   margin: 0;
   padding-bottom: 50px;
@@ -28,6 +32,11 @@ header {
   position: fixed;
   width: 100vw;
   background-color: #fff;
+}
+
+.english-big {
+  font-size: 1.25rem;
+  display: inline-block;
 }
 
 // loading画面
@@ -86,7 +95,8 @@ header {
     margin: 15px auto;
     font-family: Georgia, Arial, sans-serif;
     font-size: 14px;
-    background-color: white;
+    background-color: #fff;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2);
 }
 
 .nav-items {
@@ -158,8 +168,11 @@ header {
   display: inline;
 }
 
-//TOP(about)ページ
+.sns-show a {
+  text-decoration: none;
+}
 
+//TOP(about)ページ
 #about {
   background-image: image-url("makeithappen.jpg");
   position: fixed;
@@ -256,6 +269,24 @@ table th {
   padding: 10px;
 }
 
+.post-content {
+    width: 60%;
+}
+
+.post-new {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-show {
+  display: flex;
+  justify-content: center;
+}
+
+.post-show-m {
+  display: none;
+}
+
 // いいね
 .love {
   background-image: image-url("like-l.png");
@@ -331,6 +362,11 @@ table th {
   border-radius: 50%;
 }
 
+// コンタクト
+.contact-message {
+  white-space: pre-wrap;
+}
+
 // フッター
 footer {
 	bottom: 0;
@@ -399,7 +435,7 @@ footer .sns a {
   }
 
   .top-box {
-    padding: 70px 0 0;
+    padding: 70px 0 20px;
   }
 
   footer {
@@ -551,10 +587,30 @@ footer .sns a {
     position: absolute;
     padding: 5px;
     top: 20%;
-    left: 5%;
+    left: 20%;
   }
 
+  // 投稿関連
+  .post-show {
+    display: block;
+  }
 
+  .post-content {
+    width: 95%;
+  }
+
+  .post-comment {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .love,
+  .loved,
+  .bookmark,
+  .bookmarked,
+  .tweet-btn {
+    height: 20px;
+    width: 20px;
+    background-size: 20px !important;
+  }
 }
-
-

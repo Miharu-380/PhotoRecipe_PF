@@ -3,7 +3,7 @@
       <% @likes.each do |like| %>
         <div class="profile-shape">
           <%= attachment_image_tag like.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %>
-            <%= link_to user_path(like.user) do %>
+            <%= link_to user_path(like.user), data: {"turbolinks" => false} do %>
               <%= like.user.username %>
             <% end %>
         </div>

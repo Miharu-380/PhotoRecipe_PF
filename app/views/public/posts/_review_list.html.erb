@@ -1,11 +1,11 @@
 <% post.reviews.each do |review| %>
   <div class="mb-2">
     <% if review.user == current_user %>
-      <%= link_to "", post_review_path(post.id, review), method: :delete, remote: true, class: "delete-review" %>
+      <%= link_to "", post_review_path(post.id, review), method: :delete, remote: true, class: "delete-review", data: {"turbolinks" => false} %>
     <% end %>
     <span>
       <strong>
-        <%= link_to review.user.username, user_path(review.user), class: "no-text-decoration black-color" %>
+        <%= link_to review.user.username, user_path(review.user), class: "no-text-decoration black-color", data: {"turbolinks" => false} %>
       </strong>
     </span>
     <span><%= review.review %></span>

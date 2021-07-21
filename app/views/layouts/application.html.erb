@@ -21,9 +21,12 @@
     <%= render 'layouts/mobile_header' %>
 
     <div class="top-box">
+      <div id="comments-error">
       <%= render 'layouts/flash' %>
-    <%= yield %>
+      </div>
+      <%= yield %>
     </div>
+
     <%= render 'layouts/footer' %>
     <%= render 'layouts/mobile_footer' %>
   </body>

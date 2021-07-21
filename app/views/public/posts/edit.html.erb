@@ -6,87 +6,89 @@
         <%= f.label "写真" %><br>
         <%= f.file_field :image %>
       </div>
-      
+
       <div class="form-group">
       <%= f.label "タイトル" %><br>
       <%= f.text_field :title, autofocus: true, placeholder: "例）海と私", class: "form-control" %>
       </div>
-      
+
       <div class="form-group">
       <%= f.label "撮影機器・アプリ" %><br>
       <%= f.text_field :photo_app, autofocus: true, placeholder: "iPhone12,Foodie", class: "form-control" %>
       </div>
-      
+
       <div class="form-group">
       <%= f.label "撮影フィルター" %><br>
       <%= f.text_field :photo_filter , autofocus: true, placeholder: "ULikeのCharisma", class: "form-control" %>
       </div>
-      
+
       <div class="form-group">
       <%= f.label "加工アプリ" %><br>
       <%= f.text_field :fix_app , autofocus: true, placeholder: "Snapseed", class: "form-control" %>
       </div>
-      
+
       <div class="form-group">
       <%= f.label "加工フィルター" %><br>
       <%= f.text_field :fix_filter , autofocus: true, placeholder: "iPhoneの写真編集の自動", class: "form-control" %>
       </div>
-      
-      <div class="d-flex justify-content-between">
-      <div class="form-group">
-      <%= f.label "露出" %>
-      <%= f.text_field :exposure , autofocus: true, placeholder: "-100 〜 +100", class: "form-control" %>
+
+      <div class="post-new">
+        <div class="form-group">
+        <%= f.label "露出" %>
+        <%= f.text_field :exposure , autofocus: true, placeholder: "-100 〜 +100", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+        <%= f.label "ハイライト" %>
+        <%= f.text_field :highlight , autofocus: true, placeholder: "-100 〜 +100", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+        <%= f.label "ブリリアンス" %>
+        <%= f.text_field :burilliance , autofocus: true, placeholder: "-100 〜 +100", class: "form-control" %>
+        </div>
       </div>
 
-      <div class="form-group">
-      <%= f.label "ハイライト" %>
-      <%= f.text_field :highlight , autofocus: true, placeholder: "-100 〜 +100", class: "form-control" %>
+      <div class="post-new">
+        <div class="form-group">
+        <%= f.label "シャドウ" %>
+        <%= f.text_field :shadow , autofocus: true, placeholder: "-100 〜 +100", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+        <%= f.label "明るさ" %>
+        <%= f.text_field :brightness , autofocus: true, placeholder: "-100 〜 +100", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+        <%= f.label "コントラスト" %>
+        <%= f.text_field :contrast , autofocus: true, placeholder: "-100 〜 +100", class: "form-control" %>
+        </div>
       </div>
 
-      <div class="form-group">
-      <%= f.label "ブリリアンス" %>
-      <%= f.text_field :burilliance , autofocus: true, placeholder: "-100 〜 +100", class: "form-control" %>
+      <div class="post-new">
+        <div class="form-group">
+        <%= f.label "彩度" %>
+        <%= f.text_field :saturation , autofocus: true, placeholder: "-100 〜 +100", class: "form-control"%>
+        </div>
+
+        <div class="form-group">
+        <%= f.label "暖かみ" %>
+        <%= f.text_field :warmth , autofocus: true, placeholder: "-100 〜 +100", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+        <%= f.label "シャープネス" %>
+        <%= f.text_field :sharpness , autofocus: true, placeholder: "-100 〜 +100", class: "form-control" %>
+        </div>
       </div>
 
-      <div class="form-group">
-      <%= f.label "シャドウ" %>
-      <%= f.text_field :shadow , autofocus: true, placeholder: "-100 〜 +100", class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-      <%= f.label "コントラスト" %>
-      <%= f.text_field :contrast , autofocus: true, placeholder: "-100 〜 +100", class: "form-control" %>
-      </div>
-      </div>
-
-      <div class="d-flex justify-content-between">
-      <div class="form-group">
-      <%= f.label "明るさ" %>
-      <%= f.text_field :brightness , autofocus: true, placeholder: "-100 〜 +100", class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-      <%= f.label "彩度" %>
-      <%= f.text_field :saturation , autofocus: true, placeholder: "-100 〜 +100", class: "form-control"%>
-      </div>
-
-      <div class="form-group">
-      <%= f.label "暖かみ" %>
-      <%= f.text_field :warmth , autofocus: true, placeholder: "-100 〜 +100", class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-      <%= f.label "シャープネス" %>
-      <%= f.text_field :sharpness , autofocus: true, placeholder: "-100 〜 +100", class: "form-control" %>
-      </div>
-      </div>
-      
       <div class="form-group">
         <%= f.label "説明" %>
         <%= f.text_area :body, autofocus: true, placeholder: "主役のスイーツをかなり近くから撮影しました", class: "form-control" %>
       </div>
-      
-      <%= f.submit '投稿', class: "btn btn-outline-info w-100" %>
+
+      <%= f.submit '更新', class: "btn btn-outline-info w-100" %>
     <% end %>
   </div>
 </div>
