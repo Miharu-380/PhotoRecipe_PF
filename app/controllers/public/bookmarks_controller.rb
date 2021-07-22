@@ -2,7 +2,7 @@ class Public::BookmarksController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @bookmark = current_user.bookmarks.build(bookmark_params)
+    @bookmark = current_user.bookmarks.build(bookmark_params) # 親モデル.子モデル.buildという形式
     @post = @bookmark.post
     if @bookmark.save
       respond_to :js
