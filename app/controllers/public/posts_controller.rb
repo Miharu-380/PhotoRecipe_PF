@@ -12,7 +12,7 @@ class Public::PostsController < ApplicationController
     @post.user_id = current_user.id
     if @post.save
       redirect_to index_path
-      flash[:notice] = "投稿しました"
+      flash[:notice] = "投稿しました。"
     else
       render 'new'
     end
@@ -29,7 +29,7 @@ class Public::PostsController < ApplicationController
     @post.user_id = current_user.id
     if @post.update(post_params)
       redirect_to post_path(@post)
-      flash[:notice] = "投稿を更新しました"
+      flash[:notice] = "投稿を更新しました。"
     else
       render 'edit'
     end
@@ -39,7 +39,7 @@ class Public::PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to index_path
-    flash[:notice] = "投稿を削除しました"
+    flash[:notice] = "投稿を削除しました。"
   end
 
   def like
@@ -48,7 +48,6 @@ class Public::PostsController < ApplicationController
   end
 
   def hashtag
-    # @user = current_user
     @tag = Hashtag.find_by(hashname: params[:name])
     @posts = @tag.posts
   end

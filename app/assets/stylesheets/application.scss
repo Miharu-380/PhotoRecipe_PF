@@ -19,7 +19,7 @@
 @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
 
 html {
-  font-size: calc(10px + 0.30vw)
+  font-size: calc(10px + 0.35vw)
 }
 
 body {
@@ -262,7 +262,7 @@ header {
   margin: 3px;
   height: 30px;
   width: 30px;
-  background-size: 30px !important;
+  background-size: 30px;
 }
 
 table th {
@@ -293,7 +293,7 @@ table th {
   background-repeat: no-repeat;
   height: 36px;
   width: 36px;
-  background-size: 36px !important;
+  background-size: 36px;
 }
 
 .loved {
@@ -301,7 +301,7 @@ table th {
   background-repeat: no-repeat;
   height: 36px;
   width: 36px;
-  background-size: 36px !important;
+  background-size: 36px;
 }
 
 .hide-text {
@@ -326,7 +326,7 @@ table th {
   margin: 3px;
   height: 30px;
   width: 30px;
-  background-size: 30px !important;
+  background-size: 30px;
 }
 
 .bookmarked {
@@ -335,7 +335,7 @@ table th {
   margin: 3px;
   height: 30px;
   width: 30px;
-  background-size: 30px !important;
+  background-size: 30px;
 }
 
 // コメント
@@ -451,7 +451,7 @@ footer .sns a {
     position: fixed;
     left: 0;
     bottom: 10px;
-    background: white;
+    background: #fff;
     width: 100%;
   }
 
@@ -472,7 +472,7 @@ footer .sns a {
 
   #fix-phone-under-menu a span {
     display: block;
-    font-size: 6px;
+    font-size: 8px;
   }
 
   .iconname {
@@ -611,6 +611,6 @@ footer .sns a {
   .tweet-btn {
     height: 20px;
     width: 20px;
-    background-size: 20px !important;
+    background-size: 20px;
   }
 }

@@ -1,22 +1,21 @@
 class Public::ContactsController < ApplicationController
+  before_action :set_contact, only: [:confirm, :back, :create]
+
   def new
     @contact = Contact.new
   end
 
   def confirm
-    @contact = Contact.new(contact_params)
     if @contact.invalid?
       render :new
     end
   end
 
   def back
-    @contact = Contact.new(contact_params)
     render :new
   end
 
   def create
-    @contact = Contact.new(contact_params)
     if @contact.save
       ContactMailer.send_mail(@contact).deliver_now
       redirect_to done_contacts_path
@@ -32,5 +31,9 @@ class Public::ContactsController < ApplicationController
 
   def contact_params
     params.require(:contact).permit(:email, :name, :subject, :message)
+  end
+
+  def set_contact
+    @contact = Contact.new(contact_params)
   end
 end

@@ -22,35 +22,19 @@
       <div class="d-flex">
         <!--いいねボタン-->
         <div class="d-flex mr-auto p-2 bd-highlight">
-          <div id="like-icon-post-<%= @post.id.to_s %>">
-            <% if @post.liked_by(current_user).present? %>
-              <%= link_to "いいねを取り消す", post_like_path(@post.id, @post.liked_by(current_user)), method: :DELETE, remote: true, class: "loved hide-text" %>
-            <% else %>
-              <%= link_to "いいね", post_likes_path(@post), method: :POST, remote: true, class: "love hide-text" %>
-            <% end %>
-          </div>
-          <div id="like-text-post-<%= @post.id.to_s %>" class="mt-2">
-            <%= render "like_text", { likes: @post.likes, post: @post } %>
-          </div>
+          <%= render 'like', { post: @post } %>
         </div>
-
         <!--ツイート共有ボタン-->
         <div class="p-2 bd-highlight">
           <%= link_to "ツイート共有", "https://twitter.com/share?url=#{ request.url }/&text=フォトレシピを投稿しました！&hashtags=スマフォトレシピ", class: 'tweet-btn hide-text', target: '_blank' %>
         </div>
-
         <!--ブックマークボタン-->
         <div class="p-2 bd-highlight">
           <div id="bookmark-icon-post-<%= @post.id.to_s %>">
-            <% if @post.bookmarked_by(current_user).present? %>
-              <%= link_to "お気に入りを外す", post_bookmark_path(@post.id, @post.bookmarked_by(current_user)), method: :DELETE, remote: true, class: "bookmarked hide-text" %>
-            <% else %>
-              <%= link_to "お気に入り", post_bookmarks_path(@post), method: :POST, remote: true, class: "bookmark hide-text" %>
-            <% end %>
+            <%= render 'bookmark', { post: @post } %>
           </div>
         </div>
       </div>
-
 
       <p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
       <p><%= @post.title %></p><br>
@@ -145,12 +129,7 @@
         <%= render 'review_list', { post: @post } %>
       </div>
       <div class="row" id="review-form-post-<%= @post.id.to_s %>">
-        <%= form_with model: [@post, Review.new], class: "w-100" do |f| %>
-          <%= f.hidden_field :user_id, value: current_user.id %>
-          <%= f.hidden_field :post_id, value: @post.id %>
-          <%= f.text_field :review, class: "form-control border-0", placeholder: "コメント ...", autocomplete: :off %>
-          <%= f.submit "comment!", class: "btn btn-outline-dark float-right" %>
-        <% end %>
+        <%= render 'review_new', { post: @post } %>
       </div>
   </div>
 </div>

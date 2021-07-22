@@ -1,19 +1,6 @@
 <div class="container">
   <div class="col-12 mx-auto">
     <h2>Followers...</h2>
-    <% if @users.exists? %>
-      <% @users.each do |user| %>
-      <div class="followerings">
-        <div class="profile-shape">
-          <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size: "60x60", class: "mr-2" %>
-          <%= link_to user_path(user), data: {"turbolinks" => false} do %>
-            <%= user.username %>
-          <% end %>
-        </div>
-      </div>
-      <% end %>
-    <% else %>
-      <p>ユーザーはいません</p>
-    <% end %>
+    <%= render 'followings_followers', users: @users, user: @user %>
   </div>
 </div>
