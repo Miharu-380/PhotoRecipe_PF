@@ -27,7 +27,7 @@
           <span><%= link_to "Mypage", user_path(current_user), class: "nav-link" %></span>
         </li>
         <li class="nav-item">
-          <span><%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %></span>
+          <span><%= link_to "Logout", destroy_user_session_path, class: "nav-link logout-test", method: :delete %></span>
         </li>
       <% elsif admin_signed_in? %>
         <li class="nav-item">
@@ -41,7 +41,7 @@
           <span><%= link_to 'Guest Login!', users_guest_sign_in_path, method: :post, class: "nav-link" %></span>
         </li>
         <li class="nav-item">
-          <span><%= link_to "Login", new_user_session_path, class: "nav-link" %></span>
+          <span><%= link_to "Login", new_user_session_path, class: "nav-link login-test" %></span>
         </li>
         <li class="nav-item">
           <span><%= link_to "Signup", new_user_registration_path, class: "nav-link" %></span>
