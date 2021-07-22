@@ -3,14 +3,7 @@
     <ul class="nav-items">
       <!--検索フォーム-->
       <li class="nav-item">
-        <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |f| %>
-          <div class="search-button">
-            <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "form-control" %>
-            <%= button_tag :type => "submit", :class =>"btn btn-primary" do %>
-              <i class="fa fa-search"></i>
-            <% end %>
-          </div>
-        <% end %>
+        <%= render 'layouts/search' %>
       </li>
 
       <% if user_signed_in? %>

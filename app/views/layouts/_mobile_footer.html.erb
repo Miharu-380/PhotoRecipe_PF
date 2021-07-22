@@ -3,13 +3,13 @@
     <% if user_signed_in? %>
     <li>
       <%= link_to timeline_user_path(current_user), data: {"turbolinks" => false} do %>
-        <i class="fas fa-home fa-2x"></i><br>
+        <i class="fas fa-stopwatch fa-2x"></i><br>
         <span class="iconname">Timeline</span>
       <% end %>
     </li>
     <li>
       <%= link_to index_path, data: {"turbolinks" => false} do %>
-        <i class="fas fa-utensils fa-2x"></i><br>
+        <i class="fas fa-home fa-2x"></i><br>
         <span class="iconname">Home</span>
       <% end %>
     </li>
@@ -27,7 +27,7 @@
     </li>
     <li>
       <%= link_to new_post_path, data: {"turbolinks" => false} do %>
-        <i class="far fa-paper-plane fa-2x"></i><br>
+        <i class="fas fa-utensils fa-2x"></i><br>
         <span class="iconname">Make!</span>
       <% end %>
     </li>
