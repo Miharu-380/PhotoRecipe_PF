@@ -21,7 +21,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 20 }
   validates :username, format: { with: USERNAME_REGEXP }, length: { maximum: 15 }, presence: true, uniqueness: true
   validates :email, format: { with: VALID_EMAIL_REGEX }, presence: true, uniqueness: true
-  validates :password, length: { minimum: 6 }
+  # validates :password, length: { minimum: 6 }
   attachment :profile_image
 
   def active_for_authentication?
