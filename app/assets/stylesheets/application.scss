@@ -158,6 +158,10 @@ header {
   display: inline-flex;
 }
 
+.logo {
+  margin: 0 3rem;
+}
+
 // devise,contact関連
 .necessary {
   display: inline;
@@ -241,6 +245,9 @@ header {
   }
   @include media-breakpoint-only(xl) {
     column-count: 6;
+  }
+  @include media-breakpoint-only(sm) {
+    column-count: 3;
   }
   @include media-breakpoint-only(xs) {
     column-count: 2;
@@ -424,29 +431,21 @@ footer .sns a {
 }
 
 // メディアクエリ（スマホ）
-@media screen and (max-width:480px) {
+@media screen and (max-width:768px) {
 
   .pc-none {
     display: block;
-  }
-
-  .fixed-top {
-    display: none;
   }
 
   .top-box {
     padding: 70px 0 20px;
   }
 
+// 下部メニュー
   footer {
     display: none;
   }
 
-  #search-menu {
-    text-align: center;
-  }
-
-// 下部メニュー
   #fix-phone-under-menu {
     position: fixed;
     left: 0;
@@ -479,7 +478,19 @@ footer .sns a {
     color: #7c7877;
   }
 
-// ハンバーガーメニュー
+// ヘッダー&ハンバーガーメニュー
+  #search-menu {
+    text-align: center;
+  }
+
+  .fixed-top {
+    display: none;
+  }
+
+  .logo {
+    margin: 0.8rem 1rem;
+  }
+
   .hamburger {
     display : block;
     position: fixed;
