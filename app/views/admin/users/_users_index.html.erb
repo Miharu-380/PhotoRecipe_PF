@@ -1,27 +1,18 @@
 <div class="container">
   <div class="row mt-3">
     <div class="col-md-10 mx-auto">
-      <h3>ユーザー一覧</h3>
+      <h3>ユーザー 一覧</h3>
       <br>
-      <li class="nav-item">
-        <%= form_with(url: admin_search_path, local: true, method: :get, class: "search-form") do |f| %>
-          <div class="search-button">
-            <%= f.text_field :user_keyword, placeholder: "ユーザーを検索する", class: "form-control" %>
-            <%= button_tag :type => "submit", :class =>"btn btn-primary" do %>
-              <i class="fa fa-search"></i>
-            <% end %>
-          </div>
-        <% end %>
-      </li>
+      <%= render 'users_search' %>
       <br><br>
       <table class="table table-hover table-inverse table-responsive-md mt-3">
         <thead class="table-active">
           <tr>
-            <th>会員ID</th>
-            <th>氏名</th>
-            <th>ユーザーネーム</th>
-            <th>メールアドレス</th>
-            <th>ステータス</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>

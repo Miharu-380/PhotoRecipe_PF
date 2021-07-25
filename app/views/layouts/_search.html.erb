@@ -1,0 +1,8 @@
+<%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |f| %>
+  <div class="search-button">
+    <%= f.text_field :keyword, placeholder: "Search for Recipe!", class: "form-control" %>
+    <%= button_tag :type => "submit", :class =>"btn btn-outline-primary" do %>
+      <i class="fa fa-search"></i>
+    <% end %>
+  </div>
+<% end %>

@@ -5,9 +5,9 @@
       <div class="mypage-edit">
         <div class="english-big"><%= @user.username %></div>
         <% if current_user == @user %>
-          <%= link_to edit_user_path(current_user), data: {"turbolinks" => false} do %>
-            <%= image_tag 'haguruma.png', :size =>'20x20' %>
-          <% end %>
+          <button type="button" class="btn btn-original" data-toggle="modal" data-target="#modal1">
+            <%= image_tag 'haguruma.png', :size =>'18x18' %>
+          </button>
         <% end %>
       </div>
     </div>
@@ -15,24 +15,7 @@
 
     <!--SNSリンク-->
     <div class="d-flex justify-content-center">
-      <% if @user.instagram.present? %>
-        <div class="sns-show">
-          <%= link_to "https://www.instagram.com/#{@user.instagram}", target: '_blank', class: "mr-3" do %><!--target: '_blank'は別タブで開く-->
-            <%= image_tag 'Instagram_icon.png', :size =>'20x20' %>
-          <% end %>
-        </div>
-        <br><br>
-      <% end %>
-
-      <% if @user.twitter.present? %>
-        <div class="sns-show d-flex justify-content-center">
-          <%= link_to "https://twitter.com/#{@user.twitter}", target: '_blank' do %>
-            <%= image_tag 'Twitter_icon.png', :size =>'20x20' %>
-          <% end %>
-        </div>
-        <br><br>
-      <% end %>
-
+      <%= render 'snslinks', user: @user %>
     </div>
 
     <%= @user.introduction %>
@@ -54,19 +37,9 @@
     <%= link_to bookmark_user_path(@user) do %>
       <%= image_tag 'bookmark-on.png', :size => '20x20', class: "ml-3", data: {"turbolinks" => false} %>
     <% end %>
-    <br><br>
-    <div class="card-columns">
-      <% @posts.each do |post| %>
-        <div class="card">
-          <div class="bd-placeholder-img card-img">
-            <%= link_to post_path(post), data: {"turbolinks" => false} do %>
-              <div class="post-size">
-                <%= image_tag post.image.url %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </div>
+    <br>
+    <br>
+    <%= render 'public/homes/index', obj: @posts %>
+    <%= render 'modal_edit', user: @user %>
   </div>
 </div>

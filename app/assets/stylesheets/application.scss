@@ -19,7 +19,7 @@
 @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
 
 html {
-  font-size: calc(10px + 0.30vw)
+  font-size: calc(10px + 0.35vw)
 }
 
 body {
@@ -158,6 +158,10 @@ header {
   display: inline-flex;
 }
 
+.logo {
+  margin: 0 3rem;
+}
+
 // devise,contact関連
 .necessary {
   display: inline;
@@ -242,6 +246,9 @@ header {
   @include media-breakpoint-only(xl) {
     column-count: 6;
   }
+  @include media-breakpoint-only(sm) {
+    column-count: 3;
+  }
   @include media-breakpoint-only(xs) {
     column-count: 2;
   }
@@ -262,7 +269,7 @@ header {
   margin: 3px;
   height: 30px;
   width: 30px;
-  background-size: 30px !important;
+  background-size: 30px;
 }
 
 table th {
@@ -293,7 +300,7 @@ table th {
   background-repeat: no-repeat;
   height: 36px;
   width: 36px;
-  background-size: 36px !important;
+  background-size: 36px;
 }
 
 .loved {
@@ -301,7 +308,7 @@ table th {
   background-repeat: no-repeat;
   height: 36px;
   width: 36px;
-  background-size: 36px !important;
+  background-size: 36px;
 }
 
 .hide-text {
@@ -326,7 +333,7 @@ table th {
   margin: 3px;
   height: 30px;
   width: 30px;
-  background-size: 30px !important;
+  background-size: 30px;
 }
 
 .bookmarked {
@@ -335,7 +342,7 @@ table th {
   margin: 3px;
   height: 30px;
   width: 30px;
-  background-size: 30px !important;
+  background-size: 30px;
 }
 
 // コメント
@@ -424,34 +431,26 @@ footer .sns a {
 }
 
 // メディアクエリ（スマホ）
-@media screen and (max-width:480px) {
+@media screen and (max-width:768px) {
 
   .pc-none {
     display: block;
-  }
-
-  .fixed-top {
-    display: none;
   }
 
   .top-box {
     padding: 70px 0 20px;
   }
 
+// 下部メニュー
   footer {
     display: none;
   }
 
-  #search-menu {
-    text-align: center;
-  }
-
-// 下部メニュー
   #fix-phone-under-menu {
     position: fixed;
     left: 0;
     bottom: 10px;
-    background: white;
+    background: #fff;
     width: 100%;
   }
 
@@ -472,14 +471,26 @@ footer .sns a {
 
   #fix-phone-under-menu a span {
     display: block;
-    font-size: 6px;
+    font-size: 8px;
   }
 
   .iconname {
     color: #7c7877;
   }
 
-// ハンバーガーメニュー
+// ヘッダー&ハンバーガーメニュー
+  #search-menu {
+    text-align: center;
+  }
+
+  .fixed-top {
+    display: none;
+  }
+
+  .logo {
+    margin: 0.8rem 1rem;
+  }
+
   .hamburger {
     display : block;
     position: fixed;
@@ -611,6 +622,6 @@ footer .sns a {
   .tweet-btn {
     height: 20px;
     width: 20px;
-    background-size: 20px !important;
+    background-size: 20px;
   }
 }

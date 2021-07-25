@@ -21,6 +21,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def search
+    redirect_to admin_users_path if params[:user_keyword] == ""
     @users = User.search(params[:user_keyword])
   end
 

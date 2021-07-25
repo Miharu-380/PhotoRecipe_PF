@@ -1,4 +1,9 @@
 <div id="fix-phone-header-menu" class="pc-none">
+  <div class="logo">
+    <%= link_to index_path, data: {"turbolinks" => false} do %>
+      <%= image_tag 'logo.png', :size =>'220x40' %>
+    <% end %>
+  </div>
   <!--ハンバーガーメニュー-->
   <div class="hamburger">
     <span></span>
@@ -6,17 +11,20 @@
     <span></span>
   </div>
   <nav class="globalMenuSp">
-      <ul>
-        <% if user_signed_in? %>
-          <li><%= link_to "Mypage", user_path(current_user), data: {"turbolinks" => false} %></li>
-          <li><%= link_to "Logout", destroy_user_session_path, method: :delete, data: {"turbolinks" => false} %></li>
-          <li><%= link_to "Contact", new_contact_path, data: {"turbolinks" => false} %></li>
-          <% else %>
-           <li><%= link_to 'Guest Login!', users_guest_sign_in_path, method: :post, data: {"turbolinks" => false} %></li>
-          <li><%= link_to "Signup", new_user_registration_path, data: {"turbolinks" => false} %></li>
-          <li><%= link_to "Login", new_user_session_path, data: {"turbolinks" => false} %></li>
-          <li><%= link_to "Contact", new_contact_path, data: {"turbolinks" => false} %></li>
-        <% end %>
-      </ul>
+    <ul>
+      <% if user_signed_in? %>
+        <li><%= link_to "Mypage", user_path(current_user), data: {"turbolinks" => false} %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, data: {"turbolinks" => false} %></li>
+        <li><%= link_to "Contact", new_contact_path, data: {"turbolinks" => false} %></li>
+      <% elsif %>
+        <li><%= link_to "Users", admin_users_path, data: {"turbolinks" => false} %></li>
+        <li><%= link_to "Logout", destroy_admin_session_path, method: :delete, data: {"turbolinks" => false} %></li>
+      <% else %>
+        <li><%= link_to 'Guest Login!', users_guest_sign_in_path, method: :post, data: {"turbolinks" => false} %></li>
+        <li><%= link_to "Signup", new_user_registration_path, data: {"turbolinks" => false} %></li>
+        <li><%= link_to "Login", new_user_session_path, data: {"turbolinks" => false} %></li>
+        <li><%= link_to "Contact", new_contact_path, data: {"turbolinks" => false} %></li>
+      <% end %>
+    </ul>
   </nav>
 </div>
