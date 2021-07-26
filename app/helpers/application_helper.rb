@@ -7,6 +7,7 @@ module ApplicationHelper
       charset: 'utf-8',
       description: 'おしゃれな写真が撮れたら共有！レシピを使って素敵な写真づくりをしよう。',
       keywords: 'スマホ,写真,おしゃれ,映える',
+      noindex: ! Rails.env.production?,
       canonical: request.original_url,
       separator: '|',
       icon: [
