@@ -84,6 +84,8 @@ gem 'rails-i18n'
 
 gem 'dotenv-rails'
 
+gem 'meta-tags'
+
 group :production do
   gem 'mysql2'
 end
