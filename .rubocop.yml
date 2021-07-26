@@ -14,3 +14,4 @@ AllCops:
     - 'vendor/**/*'
     - 'path/ruby'
     - 'app/uploaders/image_uploader.rb'
+    - 'spec/spec_helper.rb'
