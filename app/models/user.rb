@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy # class_name　ここから探す
+  has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id",
+                                      dependent: :destroy # class_name　ここから探す
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   has_many :followers, through: :reverse_of_relationships, source: :follower
   # through　中間テーブルを介してUserテーブルから探すイメージ
@@ -19,7 +20,8 @@ class User < ApplicationRecord
   USERNAME_REGEXP = /\A[a-zA-Z0-9][\w-]+\z/ # 半角英数字記号_-のみ
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i # 有効なメールアドレス
   validates :name, presence: true, length: { maximum: 20 }
-  validates :username, format: { with: USERNAME_REGEXP }, length: { maximum: 15 }, presence: true, uniqueness: true
+  validates :username, format: { with: USERNAME_REGEXP }, length: { maximum: 15 },
+                       presence: true, uniqueness: true
   validates :email, format: { with: VALID_EMAIL_REGEX }, presence: true, uniqueness: true
   # validates :password, length: { minimum: 6 }
   attachment :profile_image
