@@ -1,4 +1,4 @@
-<header class="fixed-top">
+<header class="fixed-top sticky-top bg-white">
   <nav class="nav">
     <div class="logo">
       <%= link_to index_path, data: {"turbolinks" => false} do %>
@@ -7,7 +7,7 @@
     </div>
     <ul class="nav-items">
       <!--検索フォーム-->
-      <li class="nav-item">
+      <li class="nav-item-search">
         <%= render 'layouts/search' %>
       </li>
 
