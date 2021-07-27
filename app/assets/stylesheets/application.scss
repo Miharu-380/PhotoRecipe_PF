@@ -19,7 +19,7 @@
 @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
 
 html {
-  font-size: calc(10px + 0.5vw)
+  font-size: calc(10px + 0.6vw)
 }
 
 body {
@@ -32,7 +32,7 @@ body {
 header {
   position: fixed;
   width: 100vw;
-  background-color: #fff;
+  opacity: .8;
 }
 
 .english-big {
@@ -40,6 +40,9 @@ header {
   display: inline-block;
 }
 
+.container {
+  background-color: #fff;
+}
 // loading画面
 #loading {
   position: fixed;
@@ -434,6 +437,7 @@ footer .sns a {
   display: none;
 }
 
+
 // メディアクエリ（スマホ）
 @media screen and (max-width:768px) {
 
@@ -442,23 +446,7 @@ footer .sns a {
   }
 
   .top-box {
-    padding: 70px 0 20px;
-  }
-
-  // 上部メニュー
-  .fix-phone-header-menu {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-  }
-
-  .logo-m {
-    margin: 0.8rem 1rem;
-    position: fixed;
-    left: 0;
-    top: 0;
+    padding: 20px 0 20px;
   }
 
 // 下部メニュー
@@ -499,6 +487,19 @@ footer .sns a {
   }
 
 // ヘッダー&ハンバーガーメニュー
+  #fix-phone-header-menu {
+    width: 100%;
+    height: 65px;
+    z-index: 20;
+  }
+
+  .logo-m {
+    margin: 0.8rem 1rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+
   #search-menu {
     text-align: center;
   }
@@ -636,8 +637,8 @@ footer .sns a {
   .bookmark,
   .bookmarked,
   .tweet-btn {
-    height: 20px;
-    width: 20px;
-    background-size: 20px;
+    height: 25px;
+    width: 25px;
+    background-size: 25px;
   }
 }
