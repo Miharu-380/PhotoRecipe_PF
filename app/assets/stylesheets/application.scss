@@ -19,7 +19,7 @@
 @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
 
 html {
-  font-size: calc(10px + 0.6vw)
+  font-size: calc(7px + 0.6vw)
 }
 
 body {
@@ -31,6 +31,7 @@ body {
 
 header {
   position: fixed;
+  top: 0;
   width: 100vw;
   opacity: .8;
 }
@@ -96,7 +97,7 @@ header {
 
 // ナビゲーションバー
 .nav {
-    margin: 15px auto;
+    margin: 0 auto;
     font-family: Georgia, Arial, sans-serif;
     font-size: 14px;
     background-color: #fff;
@@ -104,13 +105,21 @@ header {
 }
 
 .nav-items {
-    padding: 0;
+    padding-top: 5px;
     list-style: none;
     margin-left: auto;
 }
 
+.nav-item-search {
+  display: inline-block;
+  margin-top: 0.3rem;
+  margin-bottom: 0;
+  margin-right: 25px;
+}
+
 .nav-item {
     display: inline-block;
+    margin-top: 0.1rem;
     margin-right: 25px;
 }
 
@@ -163,21 +172,7 @@ header {
 }
 
 .logo {
-  margin: 0 3rem;
-}
-
-// devise,contact関連
-.necessary {
-  display: inline;
-  color: red;
-}
-
-.mypage-edit {
-  display: inline;
-}
-
-.sns-show a {
-  text-decoration: none;
+  margin: 0.5rem 3rem;
 }
 
 //TOP(about)ページ
@@ -196,7 +191,7 @@ header {
 
 .introduction {
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 60%;
   animation: fadeIn 3s ease 2.5s 1 normal;
 }
@@ -229,7 +224,7 @@ header {
 
 // TOP/indexページ
 .top-box {
-  padding: 85px 50px 50px;
+  padding: 15px 50px 50px;
 }
 
 .card {
@@ -259,126 +254,6 @@ header {
   @include media-breakpoint-only(xs) {
     column-count: 2;
   }
-}
-
-// 投稿
-.post-size img {
-  width: 100%;
-}
-
-.post-size-show img {
-  width: 80%;
-}
-
-.tweet-btn {
-  background-image: image-url("tweet.png");
-  background-repeat: no-repeat;
-  margin: 3px;
-  height: 30px;
-  width: 30px;
-  background-size: 30px;
-}
-
-table th {
-  padding: 10px;
-}
-
-.post-content {
-    width: 60%;
-}
-
-.post-new {
-  display: flex;
-  justify-content: space-between;
-}
-
-.post-show {
-  display: flex;
-  justify-content: center;
-}
-
-.post-show-m {
-  display: none;
-}
-
-// いいね
-.love {
-  background-image: image-url("like-l.png");
-  background-repeat: no-repeat;
-  height: 36px;
-  width: 36px;
-  background-size: 36px;
-}
-
-.loved {
-  background-image: image-url("red-like.png");
-  background-repeat: no-repeat;
-  height: 36px;
-  width: 36px;
-  background-size: 36px;
-}
-
-.hide-text {
-  display: block;
-  overflow: hidden;
-  // 要素の内容が多すぎてブロックに収まらない場合に隠す
-  text-indent: 110%;
-  // ブロック内のテキストの行の前に置く空白
-  white-space: nowrap;
-  // 詰めて表示
-}
-
-.like-link {
-  color: #000;
-}
-
-
-// お気に入り
-.bookmark {
-  background-image: image-url("bookmark-off.png");
-  background-repeat: no-repeat;
-  margin: 3px;
-  height: 30px;
-  width: 30px;
-  background-size: 30px;
-}
-
-.bookmarked {
-  background-image: image-url("bookmark-on.png");
-  background-repeat: no-repeat;
-  margin: 3px;
-  height: 30px;
-  width: 30px;
-  background-size: 30px;
-}
-
-// コメント
-.no-text-decoration:hover {
-  text-decoration: none;
-}
-
-.black-color {
-  color: #262626;
-}
-
-.delete-review {
-  background-image: image-url("delete.png");
-  background-repeat: no-repeat;
-  width: 15px;
-  height: 15px;
-  float: right;
-  margin: 5px 0 0 10px;
-  background-size: 15px !important;
-}
-
-// ユーザーアイコン
-.profile-shape img {
-  border-radius: 50%;
-}
-
-// コンタクト
-.contact-message {
-  white-space: pre-wrap;
 }
 
 // フッター

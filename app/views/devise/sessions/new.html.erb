@@ -29,5 +29,9 @@
     <p>アカウントをお持ちですか？
       <%= link_to "Sign up!", new_user_registration_path %>
     </p>
+    <p>
+      ☆お試しログインは
+      <%= link_to "こちら", users_guest_sign_in_path, method: :post %>
+    </p>
   </div>
 </div>

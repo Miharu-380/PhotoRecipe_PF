@@ -1,3 +1,22 @@
 // Place all the styles related to the reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// コメント
+.no-text-decoration:hover {
+  text-decoration: none;
+}
+
+.black-color {
+  color: #262626;
+}
+
+.delete-review {
+  background-image: image-url("delete.png");
+  background-repeat: no-repeat;
+  width: 15px;
+  height: 15px;
+  float: right;
+  margin: 5px 0 0 10px;
+  background-size: 15px !important;
+}

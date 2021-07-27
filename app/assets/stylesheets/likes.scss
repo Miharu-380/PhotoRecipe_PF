@@ -1,3 +1,34 @@
 // Place all the styles related to the likes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// いいね
+.love {
+  background-image: image-url("like-l.png");
+  background-repeat: no-repeat;
+  height: 36px;
+  width: 36px;
+  background-size: 36px;
+}
+
+.loved {
+  background-image: image-url("red-like.png");
+  background-repeat: no-repeat;
+  height: 36px;
+  width: 36px;
+  background-size: 36px;
+}
+
+.hide-text {
+  display: block;
+  overflow: hidden;
+  // 要素の内容が多すぎてブロックに収まらない場合に隠す
+  text-indent: 110%;
+  // ブロック内のテキストの行の前に置く空白
+  white-space: nowrap;
+  // 詰めて表示
+}
+
+.like-link {
+  color: #000;
+}
