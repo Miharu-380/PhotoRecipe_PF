@@ -25,6 +25,7 @@ html {
 body {
   margin: 0;
   padding-bottom: 50px;
+  background-color: #fff;
   font-family: Georgia, Arial, "Sawarabi Gothic", sans-serif;
 }
 
@@ -449,10 +450,16 @@ footer .sns a {
     position: fixed;
     left: 0;
     top: 0;
-    background: #fff;
     width: 100%;
+    z-index: 999;
   }
 
+  .logo-m {
+    margin: 0.8rem 1rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
 
 // 下部メニュー
   footer {
@@ -463,7 +470,7 @@ footer .sns a {
     position: fixed;
     left: 0;
     bottom: 0;
-    background: #fff;
+    background-color: #fff;
     width: 100%;
   }
 
@@ -498,13 +505,6 @@ footer .sns a {
 
   .fixed-top {
     display: none;
-  }
-
-  .logo-m {
-    margin: 0.8rem 1rem;
-    position: fixed;
-    left: 0;
-    top: 0;
   }
 
   .hamburger {
