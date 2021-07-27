@@ -41,7 +41,8 @@ class Public::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :username, :profile_image, :introduction, :instagram, :twitter)
+    params.require(:user).permit(:name, :username, :profile_image, :introduction, :instagram,
+                                 :twitter)
   end
 
   def set_user

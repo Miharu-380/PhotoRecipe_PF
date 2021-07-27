@@ -6,5 +6,4 @@ class Public::HomesController < ApplicationController
     @posts = Post.all
     @tag_list = Tag.all
   end
-
 end
