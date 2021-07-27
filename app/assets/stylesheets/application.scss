@@ -19,7 +19,7 @@
 @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
 
 html {
-  font-size: calc(10px + 0.35vw)
+  font-size: calc(10px + 0.5vw)
 }
 
 body {
@@ -249,6 +249,9 @@ header {
   @include media-breakpoint-only(sm) {
     column-count: 3;
   }
+  @include media-breakpoint-only(s) {
+    column-count: 2;
+  }
   @include media-breakpoint-only(xs) {
     column-count: 2;
   }
@@ -441,6 +444,16 @@ footer .sns a {
     padding: 70px 0 20px;
   }
 
+  // 上部メニュー
+  .fix-phone-header-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #fff;
+    width: 100%;
+  }
+
+
 // 下部メニュー
   footer {
     display: none;
@@ -449,7 +462,7 @@ footer .sns a {
   #fix-phone-under-menu {
     position: fixed;
     left: 0;
-    bottom: 10px;
+    bottom: 0;
     background: #fff;
     width: 100%;
   }
