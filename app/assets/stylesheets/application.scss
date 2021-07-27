@@ -500,8 +500,11 @@ footer .sns a {
     display: none;
   }
 
-  .logo {
+  .logo-m {
     margin: 0.8rem 1rem;
+    position: fixed;
+    left: 0;
+    top: 0;
   }
 
   .hamburger {
