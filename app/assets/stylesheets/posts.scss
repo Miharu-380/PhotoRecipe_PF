@@ -1,3 +1,43 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 投稿
+.post-size img {
+  width: 100%;
+}
+
+.post-size-show img {
+  width: 70%;
+}
+
+.tweet-btn {
+  background-image: image-url("share.png");
+  background-repeat: no-repeat;
+  margin: 3px;
+  height: 30px;
+  width: 30px;
+  background-size: 30px;
+}
+
+table th {
+  padding: 10px;
+}
+
+.post-content {
+    width: 60%;
+}
+
+.post-new {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-show {
+  display: flex;
+  justify-content: center;
+}
+
+.post-show-m {
+  display: none;
+}

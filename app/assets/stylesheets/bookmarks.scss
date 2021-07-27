@@ -1,3 +1,22 @@
 // Place all the styles related to the bookmarks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// お気に入り
+.bookmark {
+  background-image: image-url("bookmark-off.png");
+  background-repeat: no-repeat;
+  margin: 3px;
+  height: 30px;
+  width: 30px;
+  background-size: 30px;
+}
+
+.bookmarked {
+  background-image: image-url("bookmark-on.png");
+  background-repeat: no-repeat;
+  margin: 3px;
+  height: 30px;
+  width: 30px;
+  background-size: 30px;
+}
