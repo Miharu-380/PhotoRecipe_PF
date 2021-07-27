@@ -16,7 +16,7 @@
         <li><%= link_to "Mypage", user_path(current_user), data: {"turbolinks" => false} %></li>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete, data: {"turbolinks" => false} %></li>
         <li><%= link_to "Contact", new_contact_path, data: {"turbolinks" => false} %></li>
-      <% elsif %>
+      <% elsif admin_signed_in? %>
         <li><%= link_to "Users", admin_users_path, data: {"turbolinks" => false} %></li>
         <li><%= link_to "Logout", destroy_admin_session_path, method: :delete, data: {"turbolinks" => false} %></li>
       <% else %>
