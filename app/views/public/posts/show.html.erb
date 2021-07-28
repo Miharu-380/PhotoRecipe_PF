@@ -2,8 +2,8 @@
   <div class="post-content mr-2">
     <div class="d-flex">
       <div class="profile-shape mr-auto p-2 bd-highlight">
-          <%= attachment_image_tag @post.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %>
           <%= link_to user_path(@post.user), data: {"turbolinks" => false} do %>
+            <%= attachment_image_tag @post.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %>
             <%= @post.user.username %>
           <% end %>
         </div>
