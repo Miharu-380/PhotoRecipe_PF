@@ -84,7 +84,7 @@ class Public::PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:image, :title, :photo_app, :photo_filter, :fix_app, :fix_filter,
                                  :exposure, :highlight, :burilliance, :shadow, :contrast,
-                                 :brightness, :saturation, :warmth, :sharpness, :body)
+                                 :brightness, :saturation, :warmth, :sharpness, :body, :explanation)
   end
 
   def set_post

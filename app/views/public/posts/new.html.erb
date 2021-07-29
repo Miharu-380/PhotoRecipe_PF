@@ -85,7 +85,12 @@
 
       <div class="form-group">
       <%= f.label "説明" %>
-      <%= f.text_area :body, size: '10x10', autofocus: true, placeholder: "主役のスイーツをかなり近くから撮影しました", class: "form-control" %>
+      <%= f.text_area :explanation, size: '10x10', autofocus: true, placeholder: "主役のスイーツをかなり近くから撮影しました", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+      <%= f.label "タグ" %>
+      <%= f.text_field :body, autofocus: true, placeholder: "#カフェ", class: "form-control" %>
       </div>
 
       <%= f.submit 'Make a Recipe!', class: "btn btn-outline-info w-100" %>
