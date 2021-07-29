@@ -505,6 +505,12 @@ footer .sns a {
   }
 
   .post-content {
+    // width: 95%;
+    display: none;
+  }
+
+  .post-content-m {
+    margin: 0 auto;
     width: 95%;
   }
 

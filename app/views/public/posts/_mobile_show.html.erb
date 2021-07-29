@@ -1,29 +1,27 @@
-<div class="container post-show">
-  <%= render 'mobile_show', post: @post %>
-  <div class="post-content mr-2">
+  <div class="pc-none post-content-m">
     <div class="d-flex">
       <div class="profile-shape mr-auto p-2 bd-highlight">
-          <%= link_to user_path(@post.user), data: {"turbolinks" => false} do %>
-            <%= attachment_image_tag @post.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %>
-            <%= @post.user.username %>
+          <%= link_to user_path(post.user), data: {"turbolinks" => false} do %>
+            <%= attachment_image_tag post.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %>
+            <%= post.user.username %>
           <% end %>
         </div>
-          <% if user_signed_in? && current_user.id == @post.user_id  %>
-            <%= link_to image_tag('edit.png', :size =>'20x20'), edit_post_path(@post), class: "p-4 edit-post", data: {"turbolinks" => false} %>
-            <%= link_to image_tag('delete.png', :size =>'20x20'), post_path(@post), class: "p-4 delete-post", method: :delete, "data-confirm" => "本当に削除しますか？", data: {"turbolinks" => false} %>
+          <% if user_signed_in? && current_user.id == post.user_id  %>
+            <%= link_to image_tag('edit.png', :size =>'20x20'), edit_post_path(post), class: "p-4 edit-post", data: {"turbolinks" => false} %>
+            <%= link_to image_tag('delete.png', :size =>'20x20'), post_path(post), class: "p-4 delete-post", method: :delete, "data-confirm" => "本当に削除しますか？", data: {"turbolinks" => false} %>
           <% end %>
       </div>
 
       <div class="post-size-show text-center">
-        <%= link_to @post.image.url, "data-lightbox": @post.image.url do %>
-          <%= image_tag @post.image.url %>
+        <%= link_to post.image.url, "data-lightbox": post.image.url do %>
+          <%= image_tag post.image.url %>
         <% end %>
       </div>
 
       <div class="d-flex">
         <!--いいねボタン-->
         <div class="d-flex mr-auto p-2 bd-highlight">
-          <%= render 'like', { post: @post } %>
+          <%= render 'like', { post: post } %>
         </div>
         <!--ツイート共有ボタン-->
         <div class="p-2 bd-highlight">
@@ -31,14 +29,14 @@
         </div>
         <!--ブックマークボタン-->
         <div class="p-2 bd-highlight">
-          <div id="bookmark-icon-post-<%= @post.id.to_s %>">
-            <%= render 'bookmark', { post: @post } %>
+          <div id="bookmark-icon-post-<%= post.id.to_s %>">
+            <%= render 'bookmark', { post: post } %>
           </div>
         </div>
       </div>
 
-      <p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
-      <p><%= @post.title %></p><br>
+      <p><%= post.created_at.strftime('%Y/%m/%d') %></p>
+      <p><%= post.title %></p><br>
       <table>
         <tr>
           <th style="width: 75%">撮影機種・アプリ <%= image_tag('app.png', :size =>'20x20') %></th>
@@ -58,7 +56,7 @@
         </tr>
       </table>
       <br><br>
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-around">
         <table>
           <tr>
             <th class="pl-0">露出 <%= image_tag('exposure.png', :size =>'20x20') %></th>
@@ -71,20 +69,22 @@
             <td><%= @post.highlight %></td>
           </tr>
         </table>
+      </div>
+      <div class="d-flex justify-content-around">
         <table>
           <tr>
             <th>ブリリアンス <%= image_tag('burilliance.png', :size =>'20x20') %></th>
             <td><%= @post.burilliance %></td>
           </tr>
         </table>
-      </div>
-      <div class="d-flex justify-content-between">
         <table>
           <tr>
             <th class="pl-0">明るさ <%= image_tag('brightness.png', :size =>'20x20') %></th>
             <td><%= @post.brightness %></td>
           </tr>
         </table>
+      </div>
+      <div class="d-flex justify-content-around">
         <table>
           <tr>
             <th>シャドウ <%= image_tag('shadow.png', :size =>'20x20') %></th>
@@ -98,7 +98,7 @@
           </tr>
         </table>
       </div>
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-around">
         <table>
           <tr>
             <th class="pl-0">彩度 <%= image_tag('saturation.png', :size =>'20x20') %></th>
@@ -111,6 +111,8 @@
             <td><%= @post.warmth %></td>
           </tr>
         </table>
+      </div>
+      <div class="d-flex float-leftn">
         <table>
           <tr>
             <th>シャープネス <%= image_tag('sharpness.png', :size =>'20x20') %></th>
@@ -122,15 +124,3 @@
       <p><%= render_with_hashtags(@post.body) %></p>
       <br><br>
     </div>
-
-  <div class="post-comment"><br>
-      <!--コメント-->
-      <p>comments ...</p>
-      <div id="review-post-<%= @post.id.to_s %>">
-        <%= render 'review_list', { post: @post } %>
-      </div>
-      <div class="row" id="review-form-post-<%= @post.id.to_s %>">
-        <%= render 'review_new', { post: @post } %>
-      </div>
-  </div>
-</div>
