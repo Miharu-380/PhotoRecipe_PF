@@ -324,6 +324,10 @@ footer .sns a {
     padding: 10px 0 20px;
   }
 
+  html {
+    font-size: calc(14px + 0.8vw)
+  }
+
 // 下部メニュー
   footer {
     display: none;
@@ -346,6 +350,7 @@ footer .sns a {
     list-style: none;
     text-align: center;
     padding: 3px;
+    font-size: 12px;
   }
 
   #fix-phone-under-menu li a {
