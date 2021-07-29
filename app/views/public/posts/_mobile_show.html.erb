@@ -39,88 +39,90 @@
       <p><%= post.title %></p><br>
       <table>
         <tr>
-          <th style="width: 75%">撮影機種・アプリ <%= image_tag('app.png', :size =>'20x20') %></th>
+          <th>撮影機種・アプリ <%= image_tag('app.png', :size =>'20x20') %></th>
           <td class="align-middle"><%= @post.photo_app %></td>
         </tr>
         <tr>
-          <th style="width: 75%">撮影フィルター <%= image_tag('filter.png', :size =>'20x20') %></th>
+          <th>撮影フィルター <%= image_tag('filter.png', :size =>'20x20') %></th>
           <td><%= @post.photo_filter %></td>
         </tr>
         <tr>
-          <th style="width: 75%">加工アプリ <%= image_tag('body.png', :size =>'20x20') %></th>
+          <th>加工アプリ <%= image_tag('body.png', :size =>'20x20') %></th>
           <td><%= @post.fix_app %></td>
         </tr>
         <tr>
-          <th style="width: 75%">加工フィルター <%= image_tag('settei.png', :size =>'20x20') %></th>
+          <th>加工フィルター <%= image_tag('settei.png', :size =>'20x20') %></th>
           <td><%= @post.fix_filter %></td>
         </tr>
       </table>
       <br><br>
-      <div class="d-flex justify-content-around">
+      <div class="d-flex justify-content-between">
         <table>
           <tr>
-            <th class="pl-0">露出 <%= image_tag('exposure.png', :size =>'20x20') %></th>
+            <th>露出</th>
             <td><%= @post.exposure %></td>
           </tr>
         </table>
         <table>
           <tr>
-            <th>ハイライト <%= image_tag('highlight.png', :size =>'20x20') %></th>
+            <th>ハイライト</th>
             <td><%= @post.highlight %></td>
           </tr>
         </table>
       </div>
-      <div class="d-flex justify-content-around">
+      <div class="d-flex justify-content-between">
         <table>
           <tr>
-            <th>ブリリアンス <%= image_tag('burilliance.png', :size =>'20x20') %></th>
-            <td><%= @post.burilliance %></td>
-          </tr>
-        </table>
-        <table>
-          <tr>
-            <th class="pl-0">明るさ <%= image_tag('brightness.png', :size =>'20x20') %></th>
+            <th>明るさ</th>
             <td><%= @post.brightness %></td>
           </tr>
         </table>
-      </div>
-      <div class="d-flex justify-content-around">
         <table>
           <tr>
-            <th>シャドウ <%= image_tag('shadow.png', :size =>'20x20') %></th>
-            <td><%= @post.shadow %></td>
+
+            <th>ブリリアンス</th>
+            <td><%= @post.burilliance %></td>
+          </tr>
+        </table>
+      </div>
+      <div class="d-flex justify-content-between">
+        <table>
+          <tr>
+            <th>暖かさ</th>
+            <td><%= @post.warmth %></td>
           </tr>
         </table>
         <table>
            <tr>
-            <th>コントラスト <%= image_tag('contrast.png', :size =>'20x20') %></th>
+            <th>コントラス</th>
             <td><%= @post.contrast %></td>
           </tr>
         </table>
       </div>
-      <div class="d-flex justify-content-around">
+      <div class="d-flex justify-content-between">
         <table>
           <tr>
-            <th class="pl-0">彩度 <%= image_tag('saturation.png', :size =>'20x20') %></th>
+            <th>彩度</th>
             <td><%= @post.saturation %></td>
           </tr>
         </table>
         <table>
           <tr>
-            <th>暖かさ <%= image_tag('warmth.png', :size =>'20x20') %></th>
-            <td><%= @post.warmth %></td>
+            <th>シャドウ</th>
+            <td><%= @post.shadow %></td>
           </tr>
         </table>
       </div>
-      <div class="d-flex float-leftn">
+      <div class="d-flex float-left">
         <table>
           <tr>
-            <th>シャープネス <%= image_tag('sharpness.png', :size =>'20x20') %></th>
+            <th>シャープネス</th>
             <td><%= @post.sharpness %></td>
           </tr>
         </table>
       </div>
       <br><br>
+      <p><%= simple_format(@post.explanation) %></p>
       <p><%= render_with_hashtags(@post.body) %></p>
       <br><br>
     </div>
