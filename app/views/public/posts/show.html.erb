@@ -119,6 +119,8 @@
         </table>
       </div>
       <br><br>
+      <!--改行して内容表示-->
+      <p><%= simple_format(@post.explanation) %></p>
       <p><%= render_with_hashtags(@post.body) %></p>
       <br><br>
     </div>
