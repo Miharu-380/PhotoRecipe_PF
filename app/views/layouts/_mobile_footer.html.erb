@@ -1,31 +1,31 @@
 <div id="fix-phone-under-menu" class="pc-none">
   <ul class="d-flex justify-content-start">
     <% if user_signed_in? %>
-    <li>
+    <li class="mt-3">
       <%= link_to timeline_user_path(current_user), data: {"turbolinks" => false} do %>
         <i class="fas fa-stopwatch fa-2x"></i><br>
         <span class="iconname">Timeline</span>
       <% end %>
     </li>
-    <li>
+    <li class="mt-3">
       <%= link_to index_path, data: {"turbolinks" => false} do %>
         <i class="fas fa-home fa-2x"></i><br>
         <span class="iconname">Home</span>
       <% end %>
     </li>
-    <li>
+    <li class="mt-3">
       <%= link_to m_search_posts_path, data: {"turbolinks" => false} do %>
         <i class="fas fa-search fa-2x"></i><br>
         <span class="iconname">Search</span>
       <% end %>
     </li>
-    <li>
+    <li class="mt-3">
       <%= link_to weekly_rank_posts_path, data: {"turbolinks" => false} do %>
         <i class="fas fa-crown fa-2x"></i><br>
         <span class="iconname">Ranking</span>
       <% end %>
     </li>
-    <li>
+    <li class="mt-3">
       <%= link_to new_post_path, data: {"turbolinks" => false} do %>
         <i class="fas fa-utensils fa-2x"></i><br>
         <span class="iconname">Make!</span>
