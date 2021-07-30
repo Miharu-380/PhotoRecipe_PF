@@ -349,7 +349,6 @@ footer .sns a {
     width: 100%;
     list-style: none;
     text-align: center;
-    padding: 3px;
     font-size: 12px;
   }
 
@@ -520,7 +519,12 @@ footer .sns a {
   }
 
   .love,
-  .loved,
+  .loved, {
+    height: 28px;
+    width: 28px;
+    background-size: 28px;
+  }
+
   .bookmark,
   .bookmarked,
   .tweet-btn {
