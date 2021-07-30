@@ -1,43 +1,5 @@
-  <div class="pc-none post-content-m">
-    <div class="d-flex">
-      <div class="profile-shape mr-auto p-2 bd-highlight">
-          <%= link_to user_path(post.user), data: {"turbolinks" => false} do %>
-            <%= attachment_image_tag post.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %>
-            <%= post.user.username %>
-          <% end %>
-        </div>
-          <% if user_signed_in? && current_user.id == post.user_id  %>
-            <%= link_to image_tag('edit.png', :size =>'20x20'), edit_post_path(post), class: "p-4 edit-post", data: {"turbolinks" => false} %>
-            <%= link_to image_tag('delete.png', :size =>'20x20'), post_path(post), class: "p-4 delete-post", method: :delete, "data-confirm" => "本当に削除しますか？", data: {"turbolinks" => false} %>
-          <% end %>
-      </div>
-
-      <div class="post-size-show text-center">
-        <%= link_to post.image.url, "data-lightbox": post.image.url do %>
-          <%= image_tag post.image.url %>
-        <% end %>
-      </div>
-
-      <div class="d-flex">
-        <!--いいねボタン-->
-        <div class="d-flex mr-auto p-2 bd-highlight">
-          <%= render 'like', { post: post } %>
-        </div>
-        <!--ツイート共有ボタン-->
-        <div class="p-2 bd-highlight">
-          <%= link_to "ツイート共有", "https://twitter.com/share?url=#{ request.url }/&text=フォトレシピを投稿しました！&hashtags=スマフォトレシピ", class: 'tweet-btn hide-text', target: '_blank' %>
-        </div>
-        <!--ブックマークボタン-->
-        <div class="p-2 bd-highlight">
-          <div id="bookmark-icon-post-<%= post.id.to_s %>">
-            <%= render 'bookmark', { post: post } %>
-          </div>
-        </div>
-      </div>
-
-      <p><%= post.created_at.strftime('%Y/%m/%d') %></p>
-      <p><%= post.title %></p><br>
-      <table>
+<div class="pc-none">
+     <table>
         <tr>
           <th>撮影機種・アプリ <%= image_tag('app.png', :size =>'20x20') %></th>
           <td class="align-middle"><%= @post.photo_app %></td>
