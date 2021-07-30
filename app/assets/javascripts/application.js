@@ -26,7 +26,7 @@ $(window).on('load',function(){
 });
 
 // ハンバーガーメニュー
-$(function() {
+$(document).on('turbolinks:load', function() { // ブラウザバックでもturbolinksオフ
     $('.hamburger').click(function() {
         $(this).toggleClass('active');
 
