@@ -4,6 +4,7 @@ class Public::UsersController < ApplicationController
   before_action :ensure_correct_user, only: [:edit]
 
   def show
+    # @user = User.find_by(users: { is_deleted: false })
     @posts = @user.posts.order(created_at: :desc)
   end
 
