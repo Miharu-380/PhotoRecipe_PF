@@ -1,4 +1,6 @@
-# スマフォトレシピ！（Photo Recipe）
+# スマフォトレシピ！（Smahoto Recipe!）
+
+☆[紹介スライド](https://docs.google.com/presentation/d/17wF7MiALVfrFdW7wJlegTvo8bhR_kDYAk59OpimqToM/edit?usp=sharing)<br>
 
 ## サイト概要
 「おしゃれな写真を撮りたいけど、撮り方が分からない！」<br>
