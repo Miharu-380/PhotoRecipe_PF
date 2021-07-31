@@ -1,6 +1,6 @@
 # スマフォトレシピ！（Smahoto Recipe!）
 
-★[サイトURL](https://smaphotorecipe.com){:target="_blank"}<br>
+★<a href="https://smaphotorecipe.com" target="_blank">サイトURLb</a>
 ★[紹介スライド](https://docs.google.com/presentation/d/17wF7MiALVfrFdW7wJlegTvo8bhR_kDYAk59OpimqToM/edit?usp=sharing){:target="_blank"}<br>
 
 ## サイト概要
