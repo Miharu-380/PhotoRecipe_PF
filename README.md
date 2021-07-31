@@ -1,7 +1,7 @@
 # スマフォトレシピ！（Smahoto Recipe!）
 
-★<a href="https://smaphotorecipe.com" target="_blank">サイトURLb</a>
-★[紹介スライド](https://docs.google.com/presentation/d/17wF7MiALVfrFdW7wJlegTvo8bhR_kDYAk59OpimqToM/edit?usp=sharing){:target="_blank"}<br>
+★[サイトURL](https://smaphotorecipe.com)<br>
+★[紹介スライド](https://docs.google.com/presentation/d/17wF7MiALVfrFdW7wJlegTvo8bhR_kDYAk59OpimqToM/edit?usp=sharing)<br>
 
 ## サイト概要
 「おしゃれな写真を撮りたいけど、撮り方が分からない！」<br>
