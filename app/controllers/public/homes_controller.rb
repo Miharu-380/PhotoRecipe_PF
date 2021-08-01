@@ -3,7 +3,8 @@ class Public::HomesController < ApplicationController
   end
 
   def index
-    @posts = Post.includes(:user).all.order(created_at: :desc)
+  # 退会済の投稿は非表示
+    @posts = Post.includes(:user).where(users: { is_deleted: false }).order(created_at: :desc)
     @tag_list = Tag.all
   end
 end

@@ -1,45 +1,49 @@
 <div class="container">
   <div class="col-12 mx-auto text-center">
-    <div class="profile-shape">
-      <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %><br><br>
-      <div class="mypage-edit">
-        <div class="english-big"><%= @user.username %></div>
-        <% if current_user == @user %>
-          <button type="button" class="btn btn-original" data-toggle="modal" data-target="#modal1">
-            <%= image_tag 'haguruma.png', :size =>'18x18' %>
-          </button>
+    <% if @user.is_deleted == false %>
+      <div class="profile-shape">
+        <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %><br><br>
+        <div class="mypage-edit">
+          <div class="english-big"><%= @user.username %></div>
+          <% if current_user == @user %>
+            <button type="button" class="btn btn-original" data-toggle="modal" data-target="#modal1">
+              <%= image_tag 'haguruma.png', :size =>'18x18' %>
+            </button>
+          <% end %>
+        </div>
+      </div>
+      <br>
+
+      <!--SNSリンク-->
+      <div class="d-flex justify-content-center">
+        <%= render 'snslinks', user: @user %>
+      </div>
+
+      <%= @user.introduction %>
+      <br><br>
+      <% unless current_user == @user %>
+        <%= render 'follow', user: @user %>
+      <% end %>
+      <br><br>
+      <div class="english-big">
+        followers
+        <%= link_to user_followers_path(@user), class: "ml-1 mr-3", data: {"turbolinks" => false} do %>
+          <%= @user.followers.where(is_deleted: false).count %>
+        <% end %>
+        followings
+        <%= link_to user_followings_path(@user), class: "ml-1 mr-3", data: {"turbolinks" => false} do %>
+          <%= @user.followings.where(is_deleted: false).count %>
         <% end %>
       </div>
-    </div>
-    <br>
-
-    <!--SNSリンク-->
-    <div class="d-flex justify-content-center">
-      <%= render 'snslinks', user: @user %>
-    </div>
-
-    <%= @user.introduction %>
-    <br><br>
-    <% unless current_user == @user %>
-      <%= render 'follow', user: @user %>
-    <% end %>
-    <br><br>
-    <div class="english-big">
-      followers
-      <%= link_to user_followers_path(@user), class: "ml-1 mr-3", data: {"turbolinks" => false} do %>
-        <%= @user.followers.count %>
+      <%= link_to bookmark_user_path(@user) do %>
+        <%= image_tag 'bookmark-on.png', :size => '20x20', class: "ml-3", data: {"turbolinks" => false} %>
       <% end %>
-      followings
-      <%= link_to user_followings_path(@user), class: "ml-1 mr-3", data: {"turbolinks" => false} do %>
-        <%= @user.followings.count %>
-      <% end %>
-    </div>
-    <%= link_to bookmark_user_path(@user) do %>
-      <%= image_tag 'bookmark-on.png', :size => '20x20', class: "ml-3", data: {"turbolinks" => false} %>
+      <br>
+      <br>
+      <%= render 'public/homes/index', obj: @posts %>
+      <%= render 'modal_edit', user: @user %>
+    <% else %>
+      退会済ユーザーです。
     <% end %>
-    <br>
-    <br>
-    <%= render 'public/homes/index', obj: @posts %>
-    <%= render 'modal_edit', user: @user %>
   </div>
 </div>
