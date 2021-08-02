@@ -34,7 +34,8 @@ Instagram等で、多くの投稿写真をみる度に「どうやって撮影�
 
 
 ## 設計書
-ER図：https://drive.google.com/file/d/148dnHdJw6ik_fs-g1hYAjbkJvpYFUfcY/view?usp=sharing<br><br>
+ER図：https://drive.google.com/file/d/148dnHdJw6ik_fs-g1hYAjbkJvpYFUfcY/view?usp=sharing<br>
+![PhotoRecipe!_ER](https://user-images.githubusercontent.com/82022201/127860573-e843467d-c28f-43d2-8cd0-88f34190f233.png)<br>
 テーブル定義書（仮）：https://docs.google.com/spreadsheets/d/1xez6gQmf0mGyafTqBJXsFfr2MI9nS57v/edit#gid=1243549839<br><br>
 アプリケーション設計書（仮）：https://docs.google.com/spreadsheets/d/1JDVeOWU6CKI0bNWl4rc7EXBqfo98KN68SCTVIuXPyJA/edit?usp=sharing
 
