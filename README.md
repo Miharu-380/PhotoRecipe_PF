@@ -1,6 +1,6 @@
 # スマフォトレシピ！（Smahoto Recipe!）
 ![cell_phone](https://user-images.githubusercontent.com/82022201/128010093-9f6c7089-baad-41b4-9784-d532e9a4a9ee.png)
-<img width="960" alt="pc-screen 2" src="https://user-images.githubusercontent.com/82022201/128012958-53b1ed54-1cf8-49c8-b5b7-4c650b52b48a.png">
+<img width="640" alt="pc" src="https://user-images.githubusercontent.com/82022201/128012217-35fac499-e919-4577-b4bd-c0bf67e321f5.png">
 <br>
 ★[サイトURL](https://smaphotorecipe.com)<br>
 ★[紹介スライド](https://docs.google.com/presentation/d/17wF7MiALVfrFdW7wJlegTvo8bhR_kDYAk59OpimqToM/edit?usp=sharing)<br>
