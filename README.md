@@ -1,5 +1,7 @@
 # スマフォトレシピ！（Smahoto Recipe!）
-
+![cell_phone](https://user-images.githubusercontent.com/82022201/128010093-9f6c7089-baad-41b4-9784-d532e9a4a9ee.png)
+<img width="512" alt="スクリーンショット 2021-08-03 20 30 08" src="https://user-images.githubusercontent.com/82022201/128010169-aa6e6650-054d-4ba7-aafc-6da889a4f6ae.png">
+<br>
 ★[サイトURL](https://smaphotorecipe.com)<br>
 ★[紹介スライド](https://docs.google.com/presentation/d/17wF7MiALVfrFdW7wJlegTvo8bhR_kDYAk59OpimqToM/edit?usp=sharing)<br>
 
