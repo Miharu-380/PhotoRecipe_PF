@@ -1,6 +1,9 @@
 # スマフォトレシピ！（Smahoto Recipe!）
+![cell_phone](https://user-images.githubusercontent.com/82022201/128010093-9f6c7089-baad-41b4-9784-d532e9a4a9ee.png)
+<img width="512" alt="pc-screen" src="https://user-images.githubusercontent.com/82022201/128012813-6a772dd0-15ed-43bc-8ff2-b912025545f8.png">
+<br>
+### サイトURLはこちら　https://smaphotorecipe.com
 
-★[サイトURL](https://smaphotorecipe.com)<br>
 ★[紹介スライド](https://docs.google.com/presentation/d/17wF7MiALVfrFdW7wJlegTvo8bhR_kDYAk59OpimqToM/edit?usp=sharing)<br>
 
 ## サイト概要
@@ -34,12 +37,13 @@ Instagram等で、多くの投稿写真をみる度に「どうやって撮影�
 
 
 ## 設計書
-ER図（仮）：https://drive.google.com/file/d/148dnHdJw6ik_fs-g1hYAjbkJvpYFUfcY/view?usp=sharing<br><br>
-テーブル定義書（仮）：https://docs.google.com/spreadsheets/d/1xez6gQmf0mGyafTqBJXsFfr2MI9nS57v/edit#gid=1243549839<br><br>
-アプリケーション設計書（仮）：https://docs.google.com/spreadsheets/d/1JDVeOWU6CKI0bNWl4rc7EXBqfo98KN68SCTVIuXPyJA/edit?usp=sharing
+☆ER図<br>
+![PhotoRecipe!_ER](https://user-images.githubusercontent.com/82022201/127860573-e843467d-c28f-43d2-8cd0-88f34190f233.png)<br>
+☆[テーブル定義書](https://docs.google.com/spreadsheets/d/1xez6gQmf0mGyafTqBJXsFfr2MI9nS57v/edit#gid=1243549839)<br>
+☆[アプリケーション設計書](https://docs.google.com/spreadsheets/d/1JDVeOWU6CKI0bNWl4rc7EXBqfo98KN68SCTVIuXPyJA/edit?usp=sharing)
 
-## チャレンジ要素一覧
-https://docs.google.com/spreadsheets/d/1SDFZfSW8QqbgynwyHAH7GCB6KCw9dbNRrw5_2srT4Aw/edit?usp=sharing
+## チャレンジ要素(機能)一覧
+☆[機能概要](https://docs.google.com/spreadsheets/d/1SDFZfSW8QqbgynwyHAH7GCB6KCw9dbNRrw5_2srT4Aw/edit?usp=sharing)
 
 ## 開発環境
 - OS：Linux(CentOS)
