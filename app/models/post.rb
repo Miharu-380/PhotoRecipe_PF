@@ -14,6 +14,10 @@ class Post < ApplicationRecord
     Like.find_by(user_id: user.id, post_id: id) # user_idとpost_idが一致するlikeを検索する
   end
 
+  def self.last_week
+    Post.joins(:likes).where(likes: { created_at: 0.days.ago.prev_week..0.days.ago.prev_week(:sunday)}).group(:id).order("count(*) desc")
+  end
+
   def bookmarked_by(user)
     Bookmark.find_by(user_id: user.id, post_id: id)
   end

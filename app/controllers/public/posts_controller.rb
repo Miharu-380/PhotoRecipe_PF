@@ -70,13 +70,7 @@ class Public::PostsController < ApplicationController
   end
 
   def weekly_rank
-    # to = Time.current.at_end_of_day
-    # from = (to - 6.day).at_beginning_of_day
-    @posts = Post.includes(:liked_users).where(users: { is_deleted: false }).
-      sort { |a, b|
-        b.liked_users.includes(:likes).size <=>
-        a.liked_users.includes(:likes).size
-      }
+    @posts = Post.last_week
   end
 
   private
