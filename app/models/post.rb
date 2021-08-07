@@ -10,8 +10,8 @@ class Post < ApplicationRecord
 
   validates :image, presence: true
 
-  def liked_by(user)
-    Like.find_by(user_id: user.id, post_id: id) # user_idとpost_idが一致するlikeを検索する
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
   end
 
   def self.last_week
