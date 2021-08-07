@@ -1,10 +1,5 @@
-<div id="like-icon-post-<%= post.id.to_s %>">
-  <% if post.liked_by(current_user).present? %>
-    <%= link_to "いいねを取り消す", post_like_path(post.id, post.liked_by(current_user)), method: :DELETE, remote: true, class: "loved hide-text" %>
-  <% else %>
-    <%= link_to "いいね", post_likes_path(post), method: :POST, remote: true, class: "love hide-text" %>
-  <% end %>
-</div>
-<div id="like-text-post-<%= post.id.to_s %>" class="mt-2">
-  <%= render "like_text", { likes: post.likes, post: post } %>
-</div>
+<% if post.liked_by?(current_user) %>
+  <%= link_to "いいねを取り消す", post_like_path(post), method: :delete, remote: true, class: "loved hide-text" %>
+<% else %>
+  <%= link_to "いいね", post_likes_path(post), method: :post, remote: true, class: "love hide-text" %>
+<% end %>
