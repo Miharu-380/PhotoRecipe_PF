@@ -22,7 +22,12 @@
       <div class="d-flex">
         <!--いいねボタン-->
         <div class="d-flex mr-auto p-2 bd-highlight">
-          <%= render 'like', { post: @post } %>
+          <div id="like-icon-post-<%= @post.id.to_s %>">
+            <%= render 'like', { post: @post } %>
+          </div>
+          <div id="like-text-post-<%= @post.id.to_s %>" class="mt-2">
+            <%= render "like_text", { likes: @post.likes, post: @post } %>
+          </div>
         </div>
         <!--ツイート共有ボタン-->
         <div class="p-2 bd-highlight">
