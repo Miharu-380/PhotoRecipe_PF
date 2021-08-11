@@ -319,14 +319,14 @@ footer .sns a {
 
 
 // メディアクエリ（スマホ）
-@media screen and (max-width:768px) {
+@media screen and (max-width: 1024px) {
 
   .pc-none {
     display: block;
   }
 
   .top-box {
-    padding: 10px 0 20px;
+    padding: 10px 0 30px;
   }
 
   html {
@@ -385,7 +385,7 @@ footer .sns a {
   }
 
   .logo-m {
-    margin: 0.8rem 1rem;
+    margin: 0.6rem 1rem;
     position: fixed;
     left: 0;
     top: 0;
@@ -399,7 +399,7 @@ footer .sns a {
     display: none;
   }
 
-  nav.globalMenuSp {
+  nav.global-menu-sp {
     position: fixed;
     z-index : 21;
     top  : 0;
@@ -411,14 +411,14 @@ footer .sns a {
     width: 100%;
   }
 
-  nav.globalMenuSp ul {
+  nav.global-menu-sp ul {
     background: #d9d4cf;
     margin: 0 auto;
     padding: 0;
     width: 100%;
   }
 
-  nav.globalMenuSp ul li {
+  nav.global-menu-sp ul li {
     list-style-type: none;
     font-size: calc(7px + 1vw);
     padding: 0;
@@ -431,14 +431,14 @@ footer .sns a {
     border-bottom: none;
   }
 
-  nav.globalMenuSp ul li a {
+  nav.global-menu-sp ul li a {
     display: block;
     color: #7c7877;
     padding: 1em 0;
     text-decoration :none;
   }
 
-  nav.globalMenuSp.active {
+  nav.global-menu-sp.active {
     transform: translateY(0%);
   }
 
@@ -447,7 +447,7 @@ footer .sns a {
     position: fixed;
     z-index : 22;
     right : 13px;
-    top   : 5px;
+    top   : 8px;
     width : 42px;
     height: 42px;
     cursor: pointer;
