@@ -1,8 +1,10 @@
-<header id="fix-phone-header-menu" class="pc-none sticky-top">
-  <div class="logo-m">
-    <%= link_to index_path, data: {"turbolinks" => false} do %>
-      <%= image_tag 'logo.png', :size =>'220x40' %>
-    <% end %>
+<div id="mobile-header">
+  <div id="fix-phone-header-menu" class="pc-none sticky-top">
+    <div class="logo-m">
+      <%= link_to index_path, data: {"turbolinks" => false} do %>
+        <%= image_tag 'logo.png', :size =>'220x40' %>
+      <% end %>
+    </div>
   </div>
   <!--ハンバーガーメニュー-->
   <div class="hamburger">
@@ -10,7 +12,7 @@
     <span></span>
     <span></span>
   </div>
-  <nav class="globalMenuSp">
+  <nav class="global-menu-sp">
     <ul>
       <% if user_signed_in? %>
         <li><%= link_to "Mypage", user_path(current_user), data: {"turbolinks" => false} %></li>
@@ -27,4 +29,4 @@
       <% end %>
     </ul>
   </nav>
-</header>
+</div>

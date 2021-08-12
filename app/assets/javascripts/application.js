@@ -31,9 +31,9 @@ $(document).on('turbolinks:load', function() { // ブラウザバックでもtur
         $(this).toggleClass('active');
 
         if ($(this).hasClass('active')) {
-            $('.globalMenuSp').addClass('active');
+            $('.global-menu-sp').addClass('active');
         } else {
-            $('.globalMenuSp').removeClass('active');
+            $('.global-menu-sp').removeClass('active');
         }
     });
 });
