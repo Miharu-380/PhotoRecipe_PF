@@ -1,6 +1,6 @@
 # スマフォトレシピ！（Smahoto Recipe!）
-![cell_phone](https://user-images.githubusercontent.com/82022201/128010093-9f6c7089-baad-41b4-9784-d532e9a4a9ee.png)
-![pc](https://user-images.githubusercontent.com/82022201/128363031-61e833fb-ee82-420b-8d2d-6cb713daeaff.png)<br>
+![cell_phone](https://user-images.githubusercontent.com/82022201/128010093-9f6c7089-baad-41b4-9784-d532e9a4a9ee.png)![pc 3](https://user-images.githubusercontent.com/82022201/128879374-3609b9c5-fada-44db-b041-6ff45036586c.png)
+<br>
 ### サイトURLはこちら　https://smaphotorecipe.com<br>
 ★[紹介スライド](https://docs.google.com/presentation/d/17wF7MiALVfrFdW7wJlegTvo8bhR_kDYAk59OpimqToM/edit?usp=sharing)<br>
 
@@ -18,7 +18,7 @@
 スマートフォンで撮影した写真と撮影技術投稿サイト。
 
 ### テーマを選んだ理由
-Instagram等で、多くの投稿写真をみる度に「どうやって撮影したのだろう？」と思うことがあります。<br>
+Instagram等で、投稿写真をみる度に「どうやって撮影したのだろう？」と思うことがあります。<br>
 実際に自分も素敵だなと思った写真を真似して撮ってみても”何か違う”と感じることが多々ありました。<br>
 そこでまず、一眼レフ等のカメラで撮影した写真と、スマートフォンで撮影した写真を差別化し、”スマートフォンで撮影した写真に特化”して撮影技術を共有できたら、気軽に誰でもお気に入りの写真が撮れると思いこのサイトを制作しました。
 
