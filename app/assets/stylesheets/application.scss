@@ -68,20 +68,20 @@ header {
   transform: translate(-50%, -50%);
 }
 
-#loading .kvArea {
+#loading .kv-area {
   width: 100%;
 }
 
-#loading .kvArea .img-box {
+#loading .kv-area .img-box {
   text-align: center;
 }
 
-#loading .kvArea .img-box img {
+#loading .kv-area .img-box img {
   max-width: 100%;
   height: auto;
 }
 
-.fadeUp {
+.fade-up {
   animation-name: fadeUpAnime;
   animation-duration: 3.0s; // かかる時間
   animation-delay: 2.0s; // 始まる時間
@@ -382,7 +382,7 @@ footer .sns a {
     width: 100vw;
     height: 60px;
     z-index: 20;
-    background-color:rgba(255,255,255,0.8);
+    background-color: rgba(255,255,255,0.8);
   }
 
   .logo-m {
