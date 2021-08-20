@@ -68,20 +68,20 @@ header {
   transform: translate(-50%, -50%);
 }
 
-#loading .kvArea {
+#loading .kv-area {
   width: 100%;
 }
 
-#loading .kvArea .img-box {
+#loading .kv-area .img-box {
   text-align: center;
 }
 
-#loading .kvArea .img-box img {
+#loading .kv-area .img-box img {
   max-width: 100%;
   height: auto;
 }
 
-.fadeUp {
+.fade-up {
   animation-name: fadeUpAnime;
   animation-duration: 3.0s; // かかる時間
   animation-delay: 2.0s; // 始まる時間
@@ -316,7 +316,7 @@ footer .sns a {
   }
 
   .top-box {
-    padding: 10px 0 30px;
+    padding: 70px 0 30px;
   }
 
   html {
@@ -367,11 +367,12 @@ footer .sns a {
   }
 
   #fix-phone-header-menu {
-    width: 100%;
+    position: fixed;
+    top: 0;
+    width: 100vw;
     height: 60px;
     z-index: 20;
-    opacity: .8;
-    background: #fff;
+    background-color: rgba(255,255,255,0.8);
   }
 
   .logo-m {
@@ -385,7 +386,7 @@ footer .sns a {
     text-align: center;
   }
 
-  .fixed-top {
+  .h-top {
     display: none;
   }
 
