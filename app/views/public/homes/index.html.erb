@@ -1,16 +1,4 @@
-<div class="container-fluid">
-  <%#= render 'index', obj: @posts %>
-  <div class="card-columns">
-    <% @posts.each do |post| %>
-      <div class="card">
-        <div class="bd-placeholder-img card-img">
-          <%= link_to post_path(post), data: {"turbolinks" => false} do %>
-            <div class="post-size">
-              <%= image_tag post.image.url %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-  </div>
+<div class="scroll-list jscroll container-fluid">
+  <%= render 'index', obj: @posts %>
+   <%= paginate @posts %>
 </div>
