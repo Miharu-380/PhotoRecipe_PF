@@ -234,14 +234,14 @@ header {
 
 .card {
   border: none;
-  // animation: fadeIn 1.5s ease 0s 1 normal;
+  animation: fadeIn 1.5s ease 0s 1 normal;
   overflow: hidden;
 }
 
-// .card-img:hover {
-//   transform: scale(1.2); //縮小比率
-//   transition-duration: 0.3s;
-// }
+.card-img:hover {
+  transform: scale(1.2); //縮小比率
+  transition-duration: 0.3s;
+}
 
 .card-columns {
   @include media-breakpoint-only(lg) {
