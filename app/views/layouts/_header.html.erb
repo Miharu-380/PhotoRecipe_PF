@@ -1,11 +1,11 @@
 <header class="fixed-top sticky-top bg-white">
-  <nav class="nav">
+  <nav class="nav d-flex justify-content-between">
     <div class="logo">
       <%= link_to index_path, data: {"turbolinks" => false} do %>
         <%= image_tag 'logo.png', :size =>'232x45' %>
       <% end %>
     </div>
-    <ul class="nav-items">
+    <ul class="nav-items d-flex">
       <!--検索フォーム-->
       <li class="nav-item-search">
         <%= render 'layouts/search' %>

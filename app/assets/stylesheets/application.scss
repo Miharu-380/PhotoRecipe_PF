@@ -32,7 +32,7 @@ body {
 header {
   position: fixed;
   top: 0;
-  width: 100vw;
+  // width: 100vw;
   opacity: .8;
 }
 
@@ -102,82 +102,72 @@ header {
 
 // ナビゲーションバー
 .nav {
-    margin: 0 auto;
-    font-family: Georgia, Arial, sans-serif;
-    font-size: 14px;
-    background-color: #fff;
-    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2);
+  padding-right: 30px;
+  padding-left: 30px;
+  align-items: center;
+  font-family: Georgia, Arial, sans-serif;
+  font-size: 14px;
+  background-color: #fff;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2);
 }
 
 .nav-items {
-    padding-top: 5px;
-    list-style: none;
-    margin-left: auto;
-}
-
-.nav-item-search {
-  display: inline-block;
-  margin-top: 0.3rem;
-  margin-bottom: 0;
-  margin-right: 25px;
-}
-
-.nav-item {
-    display: inline-block;
-    margin-top: 0.1rem;
-    margin-right: 25px;
+  list-style: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .nav-link,
 .nav-link:link,
 .nav-link:visited,
 .nav-link:active {
-    display: block;
-    position: relative;
-    font-size: 14px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    text-decoration: none;
-    outline: none;
+  display: block;
+  position: relative;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
 }
 
 .nav-link,
 .nav-link:link,
 .nav-link:visited,
 .nav-link:active {
-    color: #000;
-    font-weight: bold;
+  color: #000;
+  font-weight: bold;
 }
 
 .nav-link::before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: rgba(0,0,0,0.2);
-    opacity: 0;
-    // 透明度：0は透明
-    -webkit-transform: translate(0, 10px);
-    // Chrome&Safari
-    transform: translate(0, 10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    // ease：開始時と終了時は緩やかに変化
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(0,0,0,0.2);
+  opacity: 0;
+  // 透明度：0は透明
+  -webkit-transform: translate(0, 10px);
+  // Chrome&Safari
+  transform: translate(0, 10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  // ease：開始時と終了時は緩やかに変化
 }
 
 .nav-link:hover::before {
-    opacity: 1;
-    -webkit-transform: translate(0, 5px);
-    transform: translate(0, 5px);
+  opacity: 1;
+  -webkit-transform: translate(0, 5px);
+  transform: translate(0, 5px);
+}
+
+// 無限スクロール
+nav.pagination {
+  display: none;
 }
 
 .search-button {
   display: inline-flex;
-}
-
-.logo {
-  margin: 0.5rem 3rem;
 }
 
 //TOP(about)ページ
@@ -234,7 +224,7 @@ header {
 
 .card {
   border: none;
-  animation: fadeIn 1.5s ease 0s 1 normal;
+  // animation: fadeIn 1.5s ease 0s 1 normal;
   overflow: hidden;
 }
 
