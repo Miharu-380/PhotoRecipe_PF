@@ -1,7 +1,7 @@
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:edit, :show, :update, :unsubscribe, :destroy]
-  before_action :ensure_correct_user, only: [:edit]
+  before_action :ensure_correct_user, only: [:edit, :destroy]
 
   def show
     # @user = User.find_by(users: { is_deleted: false })

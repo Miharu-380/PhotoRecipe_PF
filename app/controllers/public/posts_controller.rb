@@ -1,7 +1,7 @@
 class Public::PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: [:edit, :show]
-  before_action :ensure_correct_user, only: [:edit]
+  before_action :ensure_correct_user, only: [:edit, :destroy]
 
   def new
     @post = Post.new
