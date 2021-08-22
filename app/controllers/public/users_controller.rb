@@ -4,7 +4,6 @@ class Public::UsersController < ApplicationController
   before_action :ensure_correct_user, only: [:edit]
 
   def show
-    # @user = User.find_by(users: { is_deleted: false })
     @posts = @user.posts.order(created_at: :desc)
   end
 
@@ -31,12 +30,12 @@ class Public::UsersController < ApplicationController
   end
 
   def bookmark
-    @bookmarks = Bookmark.where(user_id: current_user.id)
+    @bookmarks = Bookmark.where(user_id: current_user.id).order(created_at: :desc).page(params[:page]).per(30)
   end
 
   def timeline
-    @feeds = Post.where(user_id: [current_user.id, *current_user.following_ids]).order(created_at: :desc)
     # *で配列を展開して、current_user.idと合体
+    @feeds = Post.where(user_id: [current_user.id, *current_user.following_ids]).order(created_at: :desc).page(params[:page]).per(30)
   end
 
   private

@@ -18,6 +18,11 @@ class Post < ApplicationRecord
     Post.joins(:likes).where(likes: { created_at: 0.days.ago.prev_week..0.days.ago.prev_week(:sunday)}).group(:id).order("count(*) desc")
   end
 
+  # 退会済の投稿は非表示
+  def self.post_index
+    Post.includes(:user).where(users: { is_deleted: false }).order(created_at: :desc)
+  end
+
   def bookmarked_by(user)
     Bookmark.find_by(user_id: user.id, post_id: id)
   end
