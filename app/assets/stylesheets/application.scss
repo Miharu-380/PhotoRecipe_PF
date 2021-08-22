@@ -338,7 +338,6 @@ footer .sns a {
 
   #fix-phone-under-menu ul {
     padding: 0px;
-
   }
 
   #fix-phone-under-menu li {
@@ -364,6 +363,10 @@ footer .sns a {
 // ヘッダー&ハンバーガーメニュー
   #mobile-header {
     display: block;
+  }
+  
+  #pc-header {
+    display: none;
   }
 
   #fix-phone-header-menu {
