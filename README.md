@@ -1,7 +1,7 @@
 # スマフォトレシピ！（Smahoto Recipe!）
 ![iPad and iPhone on white table](https://user-images.githubusercontent.com/82022201/129513992-5950ef6f-f315-444e-983c-4a9bba0a0987.jpg)
 <br>
-### サイトURLはこちら　https://smaphotorecipe.com<br>
+### 
 ★[紹介スライド](https://docs.google.com/presentation/d/17wF7MiALVfrFdW7wJlegTvo8bhR_kDYAk59OpimqToM/edit?usp=sharing)<br>
 
 ## サイト概要
